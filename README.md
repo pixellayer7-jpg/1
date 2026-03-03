@@ -2,6 +2,11 @@
 
 A simple, professional landing page for **PixelLayer L.L.C**, built with **React** and **Vite**. Frontend & web development for startups and small businesses.
 
+> PixelLayer L.L.C provides frontend & React development for startups and small businesses.
+
+- **Contact**: `pixellayer@gmail.com`
+- **Live demo**: _Add your deployed URL here (e.g. `https://pixel-layer-landing.vercel.app`)_
+
 ![Tech: React, Vite](https://img.shields.io/badge/React-18-61dafb?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite)
 
@@ -37,23 +42,20 @@ npm run preview
 
 ## Customize
 
-- **Contact email**: Edit `contact@pixellayer.com` in `src/components/Contact.jsx` if needed.
-- **Form handling**: Use [Formspree](https://formspree.io/) or your backend in Contact.jsx.
+This repo is configured for **PixelLayer L.L.C** by default.  
+If you fork it for your own business, you can:
 
-1. **Company name**  
-   Replace `Your Company LLC` in:
-   - `index.html` (title + meta description)
-   - `src/components/Hero.jsx` (logo text)
-   - `src/components/Footer.jsx` (brand + copy)
+- **Change branding**
+  - Update title and meta in `index.html`
+  - Update logo text in `src/components/Hero.jsx`
+  - Update footer brand in `src/components/Footer.jsx`
 
-2. **Contact email**  
-   In `src/components/Contact.jsx`, set:
-   - `mailto:hello@yourcompany.com` to your real email.
+- **Change contact email**
+  - In `src/components/Contact.jsx`, replace `pixellayer@gmail.com` with your email.
 
-3. **Form handling**  
-   The contact form only sets local state. To receive messages you can:
-   - Use [Formspree](https://formspree.io/), [Getform](https://getform.io/), or similar
-   - Or wire it to your own backend and add the endpoint in `Contact.jsx`’s `handleSubmit`
+- **Connect the form**
+  - Use a service like [Formspree](https://formspree.io/), [Getform](https://getform.io/)  
+    or your own backend in `Contact.jsx`’s `handleSubmit`.
 
 ## Deploy
 
@@ -61,10 +63,22 @@ npm run preview
 - **Netlify**: Connect repo, build command `npm run build`, publish directory `dist`.
 - **GitHub Pages**: Use `base: './'` (already set in `vite.config.js`), then deploy the `dist` folder.
 
+## About PixelLayer L.L.C
+
+PixelLayer L.L.C is a one-person frontend studio focused on:
+
+- React-based web apps and dashboards
+- High-converting landing pages
+- Clean, maintainable UI code
+
+Based in the U.S., open to remote clients worldwide.
+
 ## License
 
 MIT. Use it for your own company or clients.
 
 ---
 
-**Need a custom site or React app?** This template was built for showcasing frontend work. If you want a tailored version or a full project, reach out — I’m open to new clients.
+**Looking for a frontend developer?**  
+PixelLayer L.L.C builds fast, clean React frontends for startups and small businesses.  
+For projects and collaboration, email **pixellayer@gmail.com**.

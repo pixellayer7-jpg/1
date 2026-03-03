@@ -55,7 +55,8 @@ export default function Contact() {
           )}
         </div>
         <p className="contact-email">
-          Or email directly: <a href="mailto:contact@pixellayer.com">contact@pixellayer.com</a>
+          Or email directly:{' '}
+          <a href="mailto:pixellayer@gmail.com">pixellayer@gmail.com</a>
         </p>
       </div>
     </section>
