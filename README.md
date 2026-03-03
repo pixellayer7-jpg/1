@@ -4,7 +4,7 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 
 > PixelLayer L.L.C provides frontend & React development for startups and small businesses.
 
-- **Contact**: `pixellayer@gmail.com`
+- **Contact**: `pixellayer7@gmail.com`
 - **Live demo**: _Add your deployed URL here (e.g. `https://pixel-layer-landing.vercel.app`)_
 
 ![Tech: React, Vite](https://img.shields.io/badge/React-18-61dafb?logo=react)
@@ -51,7 +51,7 @@ If you fork it for your own business, you can:
   - Update footer brand in `src/components/Footer.jsx`
 
 - **Change contact email**
-  - In `src/components/Contact.jsx`, replace `pixellayer@gmail.com` with your email.
+  - In `src/components/Contact.jsx`, replace `pixellayer7@gmail.com` with your email.
 
 - **Connect the form**
   - Use a service like [Formspree](https://formspree.io/), [Getform](https://getform.io/)  
@@ -81,4 +81,4 @@ MIT. Use it for your own company or clients.
 
 **Looking for a frontend developer?**  
 PixelLayer L.L.C builds fast, clean React frontends for startups and small businesses.  
-For projects and collaboration, email **pixellayer@gmail.com**.
+For projects and collaboration, email **pixellayer7@gmail.com**.
