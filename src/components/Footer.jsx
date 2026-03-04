@@ -10,6 +10,7 @@ export default function Footer() {
         </div>
         <div className="footer-links">
           <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
           <a href="https://github.com/pixellayer7-jpg/1" target="_blank" rel="noopener noreferrer">
             GitHub

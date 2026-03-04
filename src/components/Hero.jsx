@@ -5,6 +5,7 @@ export default function Hero() {
         <a href="#" className="logo">PixelLayer L.L.C</a>
         <div className="nav-links">
           <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
