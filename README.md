@@ -13,8 +13,9 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 ## Features
 
 - **Hero** — Clear headline and call-to-action
-- **Services** — Show what you offer (Landing Pages, React Apps, UI & Integration)
-- **Contact** — Simple form + direct email link
+- **Services** — What you offer (Landing Pages, React Apps, UI & Integration)
+- **Projects** — Types of work you can build (landing, dashboard, website)
+- **Contact** — Form (Formspree-ready) + direct email link
 - **Responsive** — Works on mobile and desktop
 - **Dark theme** — Easy on the eyes, easy to customize
 
@@ -54,8 +55,7 @@ If you fork it for your own business, you can:
   - In `src/components/Contact.jsx`, replace `pixellayer7@gmail.com` with your email.
 
 - **Connect the form**
-  - Use a service like [Formspree](https://formspree.io/), [Getform](https://getform.io/)  
-    or your own backend in `Contact.jsx`’s `handleSubmit`.
+  - The form is set up for [Formspree](https://formspree.io/). Sign up, create a form, then in `src/components/Contact.jsx` replace `YOUR_FORM_ID` with your Formspree form ID. Messages will be sent to your email.
 
 ## Deploy
 

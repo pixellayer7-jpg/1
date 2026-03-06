@@ -19,6 +19,10 @@ export default function Footer() {
         <p className="footer-copy">
           © {year} PixelLayer L.L.C. Built with React.
         </p>
+        <p className="footer-cta">
+          Available for projects —{' '}
+          <a href="mailto:pixellayer7@gmail.com">pixellayer7@gmail.com</a>
+        </p>
       </div>
     </footer>
   )

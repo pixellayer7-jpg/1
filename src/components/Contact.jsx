@@ -1,12 +1,30 @@
 import { useState } from 'react'
 
+// Replace with your Formspree form ID from https://formspree.io/
+const FORMSPREE_ID = 'YOUR_FORM_ID'
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    // Replace with your form backend or mailto / Formspree etc.
-    setSubmitted(true)
+    setError(false)
+    setLoading(true)
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) setSubmitted(true)
+      else setError(true)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -24,32 +42,57 @@ export default function Contact() {
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">
+                <div className="form-field">
+                  <label htmlFor="contact-name">Your name</label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div className="form-field">
+                  <label htmlFor="contact-email">Email</label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-field">
+                <label htmlFor="contact-subject">Project or company name</label>
                 <input
+                  id="contact-subject"
                   type="text"
-                  name="name"
-                  placeholder="Your name"
-                  required
+                  name="subject"
+                  placeholder="Project or company name"
                 />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
+              </div>
+              <div className="form-field">
+                <label htmlFor="contact-message">What do you need?</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  placeholder="e.g. landing page, React app, timeline"
+                  rows={4}
                   required
                 />
               </div>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Project or company name"
-              />
-              <textarea
-                name="message"
-                placeholder="What do you need? (e.g. landing page, React app, timeline)"
-                rows={4}
-                required
-              />
-              <button type="submit" className="btn btn-primary">
-                Send Message
+              {error && (
+                <p className="contact-error">
+                  Something went wrong. Please email pixellayer7@gmail.com directly.
+                </p>
+              )}
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={loading}
+              >
+                {loading ? 'Sending…' : 'Send Message'}
               </button>
             </form>
           )}
