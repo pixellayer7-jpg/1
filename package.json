@@ -2,7 +2,13 @@
   "name": "client-landing",
   "private": true,
   "version": "1.0.0",
+  "description": "PixelLayer L.L.C — React + Vite landing page for frontend & web development services.",
   "type": "module",
+  "author": "PixelLayer L.L.C",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixellayer7-jpg/1.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -9,6 +9,7 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 
 ![Tech: React, Vite](https://img.shields.io/badge/React-18-61dafb?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite)
+[![CI](https://github.com/pixellayer7-jpg/1/actions/workflows/ci.yml/badge.svg)](https://github.com/pixellayer7-jpg/1/actions/workflows/ci.yml)
 
 ## Features
 
@@ -75,7 +76,7 @@ Based in the U.S., open to remote clients worldwide.
 
 ## License
 
-MIT. Use it for your own company or clients.
+MIT. Use it for your own company or clients. See [LICENSE](./LICENSE).
 
 ---
 
