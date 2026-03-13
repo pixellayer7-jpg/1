@@ -3,7 +3,9 @@ import { useState } from 'react'
 // Replace with your Formspree form ID from https://formspree.io/
 const FORMSPREE_ID = 'YOUR_FORM_ID'
 
-export default function Contact() {
+export default function Contact({ lang }) {
+  const isEn = lang === 'en'
+
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -30,9 +32,13 @@ export default function Contact() {
   return (
     <section id="contact" className="section contact">
       <div className="container">
-        <h2 className="section-title">Let's Work Together</h2>
+        <h2 className="section-title">
+          {isEn ? "Let's Work Together" : '聊聊你的项目'}
+        </h2>
         <p className="section-subtitle">
-          Tell me about your project. I'll reply within 24–48 hours.
+          {isEn
+            ? "Tell me about your project. I'll reply within 24–48 hours."
+            : '简单介绍一下你的项目和时间计划，我会在 24–48 小时内回复你。'}
         </p>
         <div className="contact-box">
           {submitted ? (
@@ -43,7 +49,9 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">
                 <div className="form-field">
-                  <label htmlFor="contact-name">Your name</label>
+                  <label htmlFor="contact-name">
+                    {isEn ? 'Your name' : '你的名字'}
+                  </label>
                   <input
                     id="contact-name"
                     type="text"
@@ -53,7 +61,9 @@ export default function Contact() {
                   />
                 </div>
                 <div className="form-field">
-                  <label htmlFor="contact-email">Email</label>
+                  <label htmlFor="contact-email">
+                    {isEn ? 'Email' : '邮箱'}
+                  </label>
                   <input
                     id="contact-email"
                     type="email"
@@ -64,7 +74,9 @@ export default function Contact() {
                 </div>
               </div>
               <div className="form-field">
-                <label htmlFor="contact-subject">Project or company name</label>
+                <label htmlFor="contact-subject">
+                  {isEn ? 'Project or company name' : '项目或公司名称（可选）'}
+                </label>
                 <input
                   id="contact-subject"
                   type="text"
@@ -73,7 +85,9 @@ export default function Contact() {
                 />
               </div>
               <div className="form-field">
-                <label htmlFor="contact-message">What do you need?</label>
+                <label htmlFor="contact-message">
+                  {isEn ? 'What do you need?' : '你希望我们帮你做什么？'}
+                </label>
                 <textarea
                   id="contact-message"
                   name="message"
@@ -84,7 +98,9 @@ export default function Contact() {
               </div>
               {error && (
                 <p className="contact-error">
-                  Something went wrong. Please email pixellayer7@gmail.com directly.
+                  {isEn
+                    ? 'Something went wrong. Please email pixellayer7@gmail.com directly.'
+                    : '提交失败，请直接发送邮件到 pixellayer7@gmail.com。'}
                 </p>
               )}
               <button
@@ -92,13 +108,19 @@ export default function Contact() {
                 className="btn btn-primary"
                 disabled={loading}
               >
-                {loading ? 'Sending…' : 'Send Message'}
+                {loading
+                  ? isEn
+                    ? 'Sending…'
+                    : '发送中…'
+                  : isEn
+                    ? 'Send Message'
+                    : '发送消息'}
               </button>
             </form>
           )}
         </div>
         <p className="contact-email">
-          Or email directly:{' '}
+          {isEn ? 'Or email directly:' : '也可以直接发邮件到：'}{' '}
           <a href="mailto:pixellayer7@gmail.com">pixellayer7@gmail.com</a>
         </p>
       </div>
