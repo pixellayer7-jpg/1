@@ -5,7 +5,21 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 > PixelLayer L.L.C provides frontend & React development for startups and small businesses.
 
 - **Contact**: `pixellayer7@gmail.com`
-- **Live demo**: _Add your deployed URL here (e.g. `https://pixel-layer-landing.vercel.app`)_
+- **Live demo**: _Coming soon — ask for a preview link via email._
+
+## For clients / 给客户看的说明
+
+- **What you get｜你会得到什么**  
+  A fast, modern React website or landing page tailored to your product or business.  
+  为你的产品或公司定制一套加载快、观感现代的 React 官网/落地页。
+
+- **Typical projects｜常见项目类型**  
+  SaaS / 产品落地页、数据看板 / Web App 界面、企业/工作室官网。  
+  （对应页面中的 Projects 区块，可按你的实际需求调整。）
+
+- **How we work｜合作方式**  
+  Simple requirements → short call or email → fixed quote & timeline → staged delivery with review links.  
+  先通过邮件简单确认需求，再给出报价与周期，中间会提供线上预览链接方便你随时反馈。
 
 ![Tech: React, Vite](https://img.shields.io/badge/React-18-61dafb?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite)
