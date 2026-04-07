@@ -1,8 +1,15 @@
 {
   "name": "client-landing",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "PixelLayer L.L.C — React + Vite landing page for frontend & web development services.",
+  "keywords": [
+    "react",
+    "vite",
+    "landing-page",
+    "pixelLayer",
+    "i18n"
+  ],
   "type": "module",
   "author": "PixelLayer L.L.C",
   "repository": {
@@ -12,7 +19,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -20,6 +29,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
+    "prettier": "^3.4.2",
     "vite": "^5.0.0"
   }
 }

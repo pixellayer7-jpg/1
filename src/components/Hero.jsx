@@ -28,7 +28,9 @@ export default function Hero({ lang, setLang }) {
   return (
     <header className="hero">
       <nav className="nav container">
-        <a href="#" className="logo">PixelLayer L.L.C</a>
+        <a href="#" className="logo">
+          PixelLayer L.L.C
+        </a>
         <div className="nav-links">
           <a href="#services">{t.navServices}</a>
           <a href="#projects">{t.navProjects}</a>
@@ -56,9 +58,7 @@ export default function Hero({ lang, setLang }) {
           {t.titleMain}
           <span className="highlight">{t.titleHighlight}</span>
         </h1>
-        <p className="hero-subtitle">
-          {t.subtitle}
-        </p>
+        <p className="hero-subtitle">{t.subtitle}</p>
         <div className="hero-cta">
           <a href="#contact" className="btn btn-primary">
             {t.primaryCta}

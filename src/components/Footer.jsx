@@ -16,7 +16,11 @@ export default function Footer({ lang }) {
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-          <a href="https://github.com/pixellayer7-jpg/1" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/pixellayer7-jpg/1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
         </div>

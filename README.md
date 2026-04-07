@@ -5,7 +5,7 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 > PixelLayer L.L.C provides frontend & React development for startups and small businesses.
 
 - **Contact**: `pixellayer7@gmail.com`
-- **Live demo**: _Coming soon — ask for a preview link via email._
+- **Live demo**: [https://pixellayer7-jpg.github.io/1/](https://pixellayer7-jpg.github.io/1/) — available after GitHub Pages is enabled for this repo (Settings → Pages → GitHub Actions) and a deploy runs.
 
 ## For clients / 给客户看的说明
 
@@ -54,6 +54,10 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Format (Prettier)
+npm run format
+npm run format:check
 ```
 
 ## Customize

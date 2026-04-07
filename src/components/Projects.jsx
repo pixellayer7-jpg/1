@@ -62,7 +62,9 @@ export default function Projects({ lang }) {
               <p>{p.desc}</p>
               <div className="project-tags">
                 {p.tags.map((tag) => (
-                  <span key={tag} className="project-tag">{tag}</span>
+                  <span key={tag} className="project-tag">
+                    {tag}
+                  </span>
                 ))}
               </div>
               <a href="#contact" className="project-cta">
