@@ -1,5 +1,9 @@
 # PixelLayer L.L.C — React Landing Page
 
+> **Portfolio highlight** · [My GitHub](https://github.com/pixellayer7-jpg) · **Live demo:** [Marketing landing](https://pixellayer7-jpg.github.io/1/)  
+> React 18 · Vite 5 · Responsive · Bilingual (EN/中文) · Formspree · GitHub Actions CI  
+> *(Repo name on GitHub: [`1`](https://github.com/pixellayer7-jpg/1))*
+
 A simple, professional landing page for **PixelLayer L.L.C**, built with **React** and **Vite**. Frontend & web development for startups and small businesses.
 
 > PixelLayer L.L.C provides frontend & React development for startups and small businesses.
