@@ -1,10 +1,9 @@
 import { useState } from 'react'
-
-// Replace with your Formspree form ID from https://formspree.io/
-const FORMSPREE_ID = 'YOUR_FORM_ID'
+import { EMAIL, FORMSPREE_ID } from '../config/site'
 
 export default function Contact({ lang }) {
   const isEn = lang === 'en'
+  const formsEnabled = Boolean(FORMSPREE_ID)
 
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -12,6 +11,7 @@ export default function Contact({ lang }) {
 
   async function handleSubmit(e) {
     e.preventDefault()
+    if (!formsEnabled) return
     setError(false)
     setLoading(true)
     try {
@@ -41,9 +41,17 @@ export default function Contact({ lang }) {
             : '简单介绍一下你的项目和时间计划，我会在 24–48 小时内回复你。'}
         </p>
         <div className="contact-box">
-          {submitted ? (
+          {!formsEnabled ? (
+            <p className="contact-fallback">
+              {isEn
+                ? 'Email is the fastest way to reach us while the online form is being configured.'
+                : '在线表单配置中，请优先通过邮件联系。'}
+            </p>
+          ) : submitted ? (
             <p className="contact-success">
-              Thanks! I'll get back to you soon.
+              {isEn
+                ? "Thanks! I'll get back to you soon."
+                : '已收到，我会尽快回复。'}
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
@@ -56,8 +64,9 @@ export default function Contact({ lang }) {
                     id="contact-name"
                     type="text"
                     name="name"
-                    placeholder="Your name"
+                    placeholder={isEn ? 'Your name' : '姓名'}
                     required
+                    maxLength={120}
                   />
                 </div>
                 <div className="form-field">
@@ -68,8 +77,9 @@ export default function Contact({ lang }) {
                     id="contact-email"
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="you@company.com"
                     required
+                    maxLength={320}
                   />
                 </div>
               </div>
@@ -81,7 +91,10 @@ export default function Contact({ lang }) {
                   id="contact-subject"
                   type="text"
                   name="subject"
-                  placeholder="Project or company name"
+                  placeholder={
+                    isEn ? 'Project or company name' : '项目或公司名称'
+                  }
+                  maxLength={200}
                 />
               </div>
               <div className="form-field">
@@ -91,16 +104,21 @@ export default function Contact({ lang }) {
                 <textarea
                   id="contact-message"
                   name="message"
-                  placeholder="e.g. landing page, React app, timeline"
+                  placeholder={
+                    isEn
+                      ? 'e.g. landing page, React app, timeline'
+                      : '例如：落地页、React 应用、期望上线时间'
+                  }
                   rows={4}
                   required
+                  maxLength={8000}
                 />
               </div>
               {error && (
                 <p className="contact-error">
                   {isEn
-                    ? 'Something went wrong. Please email pixellayer7@gmail.com directly.'
-                    : '提交失败，请直接发送邮件到 pixellayer7@gmail.com。'}
+                    ? `Something went wrong. Please email ${EMAIL} directly.`
+                    : `提交失败，请直接发送邮件到 ${EMAIL}。`}
                 </p>
               )}
               <button
@@ -121,7 +139,7 @@ export default function Contact({ lang }) {
         </div>
         <p className="contact-email">
           {isEn ? 'Or email directly:' : '也可以直接发邮件到：'}{' '}
-          <a href="mailto:pixellayer7@gmail.com">pixellayer7@gmail.com</a>
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </p>
       </div>
     </section>

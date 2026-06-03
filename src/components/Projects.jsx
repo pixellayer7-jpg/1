@@ -1,53 +1,69 @@
-const projectsEn = [
+import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
+
+const portfolioEn = [
   {
-    title: 'SaaS / Product Landing Page',
-    desc: 'One-page marketing site for a product or startup: hero, features, pricing, waitlist or sign-up. Mobile-first, fast load.',
-    tags: ['React', 'Vite', 'Responsive'],
-    type: 'Landing Page',
+    type: 'Live product',
+    title: 'Project Quote Calculator',
+    desc: 'Bilingual presales tool: config-driven pricing, email prefill, print/PDF, Vitest + CI, optional API share links.',
+    tags: ['React', 'Vite', 'i18n', 'Vitest'],
+    demoUrl: ESTIMATOR_URL,
+    repoUrl: `${GITHUB_PROFILE}/project-estimator`,
   },
   {
-    title: 'Dashboard & Web App UI',
-    desc: 'Internal dashboard, client portal, or SaaS app UI: tables, charts, forms, and flows. Clean React components, API-ready.',
-    tags: ['React', 'UI', 'Data'],
-    type: 'Web App',
+    type: 'Marketing site',
+    title: 'PixelLayer Landing (this site)',
+    desc: 'Responsive React landing with EN/中文, services, portfolio, and contact — deployed on GitHub Pages.',
+    tags: ['React', 'Vite', 'GitHub Pages'],
+    demoUrl: SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`,
+    repoUrl: `${GITHUB_PROFILE}/1`,
   },
   {
-    title: 'Company / Agency Website',
-    desc: 'Multi-page site for a business: About, Services, Portfolio, Contact. SEO-friendly, easy for you to update later.',
-    tags: ['React', 'Multi-page', 'SEO'],
-    type: 'Website',
+    type: 'Backend MVP',
+    title: 'estimator-api',
+    desc: 'Fastify REST service to save and restore quote snapshots by UUID — JSON Schema validation, CORS, tests.',
+    tags: ['Node', 'Fastify', 'REST'],
+    demoUrl: null,
+    repoUrl: `${GITHUB_PROFILE}/estimator-api`,
   },
 ]
 
-const projectsZh = [
+const portfolioZh = [
   {
-    title: 'SaaS / 产品落地页',
-    desc: '为 SaaS 或互联网产品制作登录页：首屏卖点、功能介绍、价格与注册/等待列表入口，突出转化。',
-    tags: ['React', 'Vite', '响应式'],
-    type: '落地页',
+    type: '线上产品',
+    title: '项目报价计算器',
+    desc: '中英双语售前工具：配置化定价、邮件预填、打印导出、Vitest 与 CI，可选 API 在线分享。',
+    tags: ['React', 'Vite', 'i18n', 'Vitest'],
+    demoUrl: ESTIMATOR_URL,
+    repoUrl: `${GITHUB_PROFILE}/project-estimator`,
   },
   {
-    title: '数据看板 / Web App 界面',
-    desc: '内部数据看板、客户门户或在线后台：表格、筛选、图表与表单流程，便于与你的 API 对接。',
-    tags: ['React', 'UI', '数据'],
-    type: 'Web 应用',
+    type: '营销官网',
+    title: 'PixelLayer 落地页（本站）',
+    desc: '响应式 React 官网：中英切换、服务介绍、作品与联系表单，GitHub Pages 部署。',
+    tags: ['React', 'Vite', 'GitHub Pages'],
+    demoUrl: SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`,
+    repoUrl: `${GITHUB_PROFILE}/1`,
   },
   {
-    title: '企业 / 工作室官网',
-    desc: '多页面公司官网：关于我们、服务介绍、案例与联系表单，兼顾品牌形象与基础 SEO 表现。',
-    tags: ['React', '多页面', 'SEO'],
-    type: '官网',
+    type: '后端 MVP',
+    title: 'estimator-api',
+    desc: 'Fastify REST：按 UUID 保存/读取报价快照，JSON Schema 校验、CORS 与测试。',
+    tags: ['Node', 'Fastify', 'REST'],
+    demoUrl: null,
+    repoUrl: `${GITHUB_PROFILE}/estimator-api`,
   },
 ]
 
 export default function Projects({ lang }) {
   const isEn = lang === 'en'
-  const projects = isEn ? projectsEn : projectsZh
-  const title = isEn ? 'What I Can Build for You' : '可以为你打造的项目类型'
+  const items = isEn ? portfolioEn : portfolioZh
+  const title = isEn ? 'Shipped Work' : '已交付作品'
   const subtitle = isEn
-    ? 'Examples of project types PixelLayer L.L.C can deliver. Each tailored to your goals and timeline.'
-    : '下面是 PixelLayer L.L.C 常见的项目类型示例，会根据你的目标和时间节点做具体定制。'
-  const cta = isEn ? 'Get a quote →' : '咨询报价 →'
+    ? 'Open-source demos you can try today — same stack we use for client projects.'
+    : '以下为可在线体验的开源作品，技术栈与交付客户项目时一致。'
+  const demoLabel = isEn ? 'Live demo' : '在线演示'
+  const codeLabel = isEn ? 'Source' : '源码'
+  const quoteLabel = isEn ? 'Get your quote →' : '获取报价 →'
 
   return (
     <section id="projects" className="section projects">
@@ -55,7 +71,7 @@ export default function Projects({ lang }) {
         <h2 className="section-title">{title}</h2>
         <p className="section-subtitle">{subtitle}</p>
         <div className="projects-grid">
-          {projects.map((p) => (
+          {items.map((p) => (
             <article key={p.title} className="project-card">
               <span className="project-type">{p.type}</span>
               <h3>{p.title}</h3>
@@ -67,12 +83,34 @@ export default function Projects({ lang }) {
                   </span>
                 ))}
               </div>
-              <a href="#contact" className="project-cta">
-                {cta}
-              </a>
+              <div className="project-links">
+                {p.demoUrl && (
+                  <a
+                    href={p.demoUrl}
+                    className="project-link project-link--primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {demoLabel}
+                  </a>
+                )}
+                <a
+                  href={p.repoUrl}
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {codeLabel}
+                </a>
+              </div>
             </article>
           ))}
         </div>
+        <p className="projects-footer-cta">
+          <a href={ESTIMATOR_URL} target="_blank" rel="noopener noreferrer">
+            {quoteLabel}
+          </a>
+        </p>
       </div>
     </section>
   )

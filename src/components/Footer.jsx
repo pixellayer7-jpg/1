@@ -1,6 +1,7 @@
+import { ESTIMATOR_URL, GITHUB_PROFILE, EMAIL } from '../config/site'
+
 export default function Footer({ lang }) {
   const isEn = lang === 'en'
-
   const year = new Date().getFullYear()
 
   return (
@@ -13,14 +14,14 @@ export default function Footer({ lang }) {
           </span>
         </div>
         <div className="footer-links">
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a
-            href="https://github.com/pixellayer7-jpg/1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#services">{isEn ? 'Services' : '服务'}</a>
+          <a href="#projects">{isEn ? 'Work' : '作品'}</a>
+          <a href="#process">{isEn ? 'Process' : '流程'}</a>
+          <a href="#contact">{isEn ? 'Contact' : '联系'}</a>
+          <a href={ESTIMATOR_URL} target="_blank" rel="noopener noreferrer">
+            {isEn ? 'Quote tool' : '报价工具'}
+          </a>
+          <a href={GITHUB_PROFILE} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
         </div>
@@ -29,7 +30,7 @@ export default function Footer({ lang }) {
         </p>
         <p className="footer-cta">
           {isEn ? 'Available for projects — ' : '目前开放新项目合作 — '}
-          <a href="mailto:pixellayer7@gmail.com">pixellayer7@gmail.com</a>
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </p>
       </div>
     </footer>
