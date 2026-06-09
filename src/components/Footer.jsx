@@ -17,6 +17,7 @@ export default function Footer({ lang }) {
           <a href="#services">{isEn ? 'Services' : '服务'}</a>
           <a href="#projects">{isEn ? 'Work' : '作品'}</a>
           <a href="#process">{isEn ? 'Process' : '流程'}</a>
+          <a href="#faq">{isEn ? 'FAQ' : '常见问题'}</a>
           <a href="#contact">{isEn ? 'Contact' : '联系'}</a>
           <a href={ESTIMATOR_URL} target="_blank" rel="noopener noreferrer">
             {isEn ? 'Quote tool' : '报价工具'}

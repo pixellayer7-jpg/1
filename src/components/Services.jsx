@@ -1,3 +1,5 @@
+import { ESTIMATOR_URL } from '../config/site'
+
 const servicesEn = [
   {
     title: 'Landing Pages',
@@ -41,6 +43,7 @@ export default function Services({ lang }) {
   const subtitle = isEn
     ? 'Frontend focus. No bloat. Delivered on time.'
     : '专注前端，不做臃肿功能，在约定时间内交付可上线的版本。'
+  const cta = isEn ? 'Get an instant estimate →' : '在线估算报价 →'
 
   return (
     <section id="services" className="section services">
@@ -56,6 +59,11 @@ export default function Services({ lang }) {
             </article>
           ))}
         </div>
+        <p className="services-cta">
+          <a href={ESTIMATOR_URL} target="_blank" rel="noopener noreferrer">
+            {cta}
+          </a>
+        </p>
       </div>
     </section>
   )

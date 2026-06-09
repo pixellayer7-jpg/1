@@ -8,6 +8,7 @@ export default function Hero({ lang, setLang }) {
         navServices: 'Services',
         navProjects: 'Work',
         navProcess: 'Process',
+        navFaq: 'FAQ',
         navContact: 'Contact',
         navQuote: 'Quote',
         titleMain: 'Modern Web Apps That ',
@@ -21,6 +22,7 @@ export default function Hero({ lang, setLang }) {
         navServices: '服务内容',
         navProjects: '作品',
         navProcess: '合作方式',
+        navFaq: '常见问题',
         navContact: '联系我',
         navQuote: '报价',
         titleMain: '为你打造现代化 ',
@@ -41,6 +43,7 @@ export default function Hero({ lang, setLang }) {
           <a href="#services">{t.navServices}</a>
           <a href="#projects">{t.navProjects}</a>
           <a href="#process">{t.navProcess}</a>
+          <a href="#faq">{t.navFaq}</a>
           <a href="#contact">{t.navContact}</a>
           <a
             href={ESTIMATOR_URL}

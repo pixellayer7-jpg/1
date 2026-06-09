@@ -1,21 +1,57 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Projects from './components/Projects'
 import Process from './components/Process'
+import Faq from './components/Faq'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+const LANG_KEY = 'pixelayer-landing-lang'
+
 export default function App() {
-  const [lang, setLang] = useState('en')
+  const [lang, setLang] = useState(() => {
+    try {
+      const s = localStorage.getItem(LANG_KEY)
+      if (s === 'en' || s === 'zh') return s
+    } catch {
+      /* ignore */
+    }
+    return 'en'
+  })
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(LANG_KEY, lang)
+    } catch {
+      /* ignore */
+    }
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en'
+    document.title =
+      lang === 'zh'
+        ? 'PixelLayer L.L.C — 前端与 Web 开发'
+        : 'PixelLayer L.L.C — Frontend & Web Development'
+  }, [lang])
+
+  const skipMain = lang === 'en' ? 'Skip to content' : '跳到正文'
+  const skipContact = lang === 'en' ? 'Skip to contact' : '跳到联系'
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        {skipMain}
+      </a>
+      <a href="#contact" className="skip-link skip-link--second">
+        {skipContact}
+      </a>
       <Hero lang={lang} setLang={setLang} />
-      <Services lang={lang} />
-      <Projects lang={lang} />
-      <Process lang={lang} />
-      <Contact lang={lang} />
+      <main id="main-content">
+        <Services lang={lang} />
+        <Projects lang={lang} />
+        <Process lang={lang} />
+        <Faq lang={lang} />
+        <Contact lang={lang} />
+      </main>
       <Footer lang={lang} />
     </>
   )
