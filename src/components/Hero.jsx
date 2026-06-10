@@ -1,4 +1,4 @@
-import { ESTIMATOR_URL } from '../config/site'
+import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
 
 export default function Hero({ lang, setLang }) {
   const isEn = lang === 'en'
@@ -7,6 +7,7 @@ export default function Hero({ lang, setLang }) {
     ? {
         navServices: 'Services',
         navProjects: 'Work',
+        navStack: 'Stack',
         navProcess: 'Process',
         navFaq: 'FAQ',
         navContact: 'Contact',
@@ -17,10 +18,14 @@ export default function Hero({ lang, setLang }) {
           'React-based frontend development for startups and small businesses. Fast, clean, and built to grow with you.',
         primaryCta: 'Get an Instant Estimate',
         secondaryCta: 'See Shipped Work',
+        badgeLanding: 'Live landing',
+        badgeCalc: 'Live calculator',
+        badgeGithub: 'Open source',
       }
     : {
         navServices: '服务内容',
         navProjects: '作品',
+        navStack: '技术栈',
         navProcess: '合作方式',
         navFaq: '常见问题',
         navContact: '联系我',
@@ -31,6 +36,9 @@ export default function Hero({ lang, setLang }) {
           '专注为初创公司和小企业提供 React 前端开发，加载快速、结构清晰，方便后续持续迭代。',
         primaryCta: '在线估算报价',
         secondaryCta: '查看已交付作品',
+        badgeLanding: '主站已上线',
+        badgeCalc: '计算器已上线',
+        badgeGithub: '开源仓库',
       }
 
   return (
@@ -42,6 +50,7 @@ export default function Hero({ lang, setLang }) {
         <div className="nav-links">
           <a href="#services">{t.navServices}</a>
           <a href="#projects">{t.navProjects}</a>
+          <a href="#stack">{t.navStack}</a>
           <a href="#process">{t.navProcess}</a>
           <a href="#faq">{t.navFaq}</a>
           <a href="#contact">{t.navContact}</a>
@@ -77,6 +86,32 @@ export default function Hero({ lang, setLang }) {
           <span className="highlight">{t.titleHighlight}</span>
         </h1>
         <p className="hero-subtitle">{t.subtitle}</p>
+        <div className="hero-badges">
+          <a
+            href={SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`}
+            className="hero-badge"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.badgeLanding}
+          </a>
+          <a
+            href={ESTIMATOR_URL}
+            className="hero-badge"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.badgeCalc}
+          </a>
+          <a
+            href={GITHUB_PROFILE}
+            className="hero-badge hero-badge--muted"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.badgeGithub}
+          </a>
+        </div>
         <div className="hero-cta">
           <a
             href={ESTIMATOR_URL}

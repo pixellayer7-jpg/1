@@ -232,13 +232,75 @@ button {
   font-size: 1.125rem;
   color: var(--text-muted);
   max-width: 42ch;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.hero-badge--muted {
+  border-color: var(--border);
+  color: var(--text-muted);
+  background: var(--bg-card);
 }
 
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* Stats */
+.stats {
+  padding: 2rem 0 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stats-foot {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* Services */
@@ -284,6 +346,33 @@ button {
   text-align: center;
   font-weight: 600;
   font-size: 1.05rem;
+}
+
+/* Tech stack */
+.stack-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.stack-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stack-item strong {
+  font-size: 1rem;
+}
+
+.stack-item span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 /* FAQ */

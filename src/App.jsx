@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import Hero from './components/Hero'
+import Stats from './components/Stats'
 import Services from './components/Services'
 import Projects from './components/Projects'
+import TechStack from './components/TechStack'
 import Process from './components/Process'
 import Faq from './components/Faq'
 import Contact from './components/Contact'
@@ -46,8 +48,10 @@ export default function App() {
       </a>
       <Hero lang={lang} setLang={setLang} />
       <main id="main-content">
+        <Stats lang={lang} />
         <Services lang={lang} />
         <Projects lang={lang} />
+        <TechStack lang={lang} />
         <Process lang={lang} />
         <Faq lang={lang} />
         <Contact lang={lang} />
