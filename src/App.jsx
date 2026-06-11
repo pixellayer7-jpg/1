@@ -6,6 +6,8 @@ import Projects from './components/Projects'
 import TechStack from './components/TechStack'
 import Process from './components/Process'
 import Faq from './components/Faq'
+import Deliverables from './components/Deliverables'
+import Legal from './components/Legal'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -14,6 +16,9 @@ const LANG_KEY = 'pixelayer-landing-lang'
 export default function App() {
   const [lang, setLang] = useState(() => {
     try {
+      const params = new URLSearchParams(window.location.search)
+      const q = params.get('lang')
+      if (q === 'en' || q === 'zh') return q
       const s = localStorage.getItem(LANG_KEY)
       if (s === 'en' || s === 'zh') return s
     } catch {
@@ -53,9 +58,11 @@ export default function App() {
         <Projects lang={lang} />
         <TechStack lang={lang} />
         <Process lang={lang} />
+        <Deliverables lang={lang} />
         <Faq lang={lang} />
         <Contact lang={lang} />
       </main>
+      <Legal lang={lang} />
       <Footer lang={lang} />
     </>
   )

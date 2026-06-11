@@ -35,7 +35,10 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 - **Hero** — Clear headline and call-to-action
 - **Services** — What you offer (Landing Pages, React Apps, UI & Integration)
 - **Projects** — Types of work you can build (landing, dashboard, website)
-- **Contact** — Form (Formspree-ready) + direct email link
+- **Contact** — Form (Formspree-ready) with project type & timeline, mailto fallback, quote handoff from calculator
+- **Deliverables** — Typical in/out of scope for client expectations
+- **Legal** — Privacy & terms summary (not legal advice)
+- **SOW template** — `docs/SOW-TEMPLATE.md` for written proposals
 - **Responsive** — Works on mobile and desktop
 - **Dark theme** — Easy on the eyes, easy to customize
 
