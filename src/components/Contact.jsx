@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { EMAIL, ESTIMATOR_URL, FORMSPREE_ID } from '../config/site'
-import { readContactHandoff } from '../utils/contactHandoff'
+import {
+  readContactHandoff,
+  mapHandoffProjectType,
+} from '../utils/contactHandoff'
 import { buildMailtoHref } from '../utils/mailto'
 
 const PROJECT_TYPES_EN = [
@@ -46,6 +49,7 @@ export default function Contact({ lang }) {
   const [timeline, setTimeline] = useState('')
   const [message, setMessage] = useState('')
   const [handoffRef, setHandoffRef] = useState(null)
+  const [handoffRange, setHandoffRange] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -55,18 +59,39 @@ export default function Contact({ lang }) {
     if (!data) return
     setMessage(data.summary)
     setHandoffRef(data.quoteRef ?? true)
+    const mapped = mapHandoffProjectType(data.projectType)
+    if (mapped) setProjectType(mapped)
+    if (
+      typeof data.min === 'number' &&
+      typeof data.max === 'number' &&
+      Number.isFinite(data.min) &&
+      Number.isFinite(data.max)
+    ) {
+      setHandoffRange(
+        `$${data.min.toLocaleString()} – $${data.max.toLocaleString()} USD`
+      )
+    }
   }, [])
 
   const handoffNote =
     handoffRef === null
       ? ''
-      : typeof handoffRef === 'string'
-        ? isEn
-          ? `Estimate loaded from quote calculator (ref: ${handoffRef}).`
-          : `已从报价计算器带入估算（编号：${handoffRef}）。`
-        : isEn
-          ? 'Estimate loaded from quote calculator.'
-          : '已从报价计算器带入估算内容。'
+      : [
+          typeof handoffRef === 'string'
+            ? isEn
+              ? `Estimate loaded from quote calculator (ref: ${handoffRef}).`
+              : `已从报价计算器带入估算（编号：${handoffRef}）。`
+            : isEn
+              ? 'Estimate loaded from quote calculator.'
+              : '已从报价计算器带入估算内容。',
+          handoffRange
+            ? isEn
+              ? `Indicative range: ${handoffRange}.`
+              : `参考区间：${handoffRange}。`
+            : '',
+        ]
+          .filter(Boolean)
+          .join(' ')
 
   const mailSubject = isEn
     ? 'Project inquiry — PixelLayer L.L.C'

@@ -1,6 +1,13 @@
 export const CONTACT_HANDOFF_KEY = 'pixellayer-contact-handoff'
 
-/** @returns {{ summary: string, lang?: string, quoteRef?: string | null, min?: number, max?: number } | null} */
+/** @returns {{
+ *   summary: string
+ *   lang?: string
+ *   quoteRef?: string | null
+ *   min?: number
+ *   max?: number
+ *   projectType?: string
+ * } | null} */
 export function readContactHandoff() {
   try {
     const raw = sessionStorage.getItem(CONTACT_HANDOFF_KEY)
@@ -12,4 +19,12 @@ export function readContactHandoff() {
   } catch {
     return null
   }
+}
+
+const VALID_PROJECT_TYPES = new Set(['landing', 'website', 'dashboard'])
+
+/** @param {string | undefined} id */
+export function mapHandoffProjectType(id) {
+  if (id && VALID_PROJECT_TYPES.has(id)) return id
+  return ''
 }

@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
           ]
           if (!siteUrl) return tags
           const canonical = `${siteUrl}/`
-          const ogImage = `${siteUrl}/favicon.svg`
+          const ogImage = `${siteUrl}/og-image.svg`
           tags.push(
             {
               tag: 'link',
@@ -44,12 +44,41 @@ export default defineConfig(({ mode }) => {
             },
             {
               tag: 'meta',
+              attrs: { property: 'og:image:width', content: '1200' },
+              injectTo: 'head',
+            },
+            {
+              tag: 'meta',
+              attrs: { property: 'og:image:height', content: '630' },
+              injectTo: 'head',
+            },
+            {
+              tag: 'meta',
+              attrs: { name: 'twitter:card', content: 'summary_large_image' },
+              injectTo: 'head',
+            },
+            {
+              tag: 'meta',
               attrs: { name: 'twitter:url', content: canonical },
               injectTo: 'head',
             },
             {
               tag: 'meta',
               attrs: { name: 'twitter:image', content: ogImage },
+              injectTo: 'head',
+            },
+            {
+              tag: 'script',
+              attrs: { type: 'application/ld+json' },
+              children: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'PixelLayer L.L.C',
+                url: canonical,
+                email: 'pixellayer7@gmail.com',
+                description:
+                  'React landing pages and web UI for startups and small businesses.',
+              }),
               injectTo: 'head',
             }
           )

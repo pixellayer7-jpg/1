@@ -1,17 +1,17 @@
 import { GITHUB_PROFILE } from '../config/site'
 
 const statsEn = [
-  { value: '3', label: 'Shipped open-source demos' },
-  { value: '61+', label: 'Automated tests (calculator)' },
-  { value: 'EN/中文', label: 'Bilingual product UX' },
-  { value: 'CI', label: 'GitHub Actions on every push' },
+  { value: '1–2 wk', label: 'Typical landing page delivery' },
+  { value: 'Written', label: 'Fixed scope before build starts' },
+  { value: 'EN/中文', label: 'Bilingual sites & communication' },
+  { value: '24–48h', label: 'Inquiry response (business days)' },
 ]
 
 const statsZh = [
-  { value: '3', label: '已上线开源演示项目' },
-  { value: '61+', label: '自动化测试（计算器）' },
-  { value: 'EN/中文', label: '双语产品体验' },
-  { value: 'CI', label: '每次推送自动构建' },
+  { value: '1–2 周', label: '落地页常见交付周期' },
+  { value: '书面', label: '开工前确认固定范围' },
+  { value: 'EN/中文', label: '双语站点与沟通' },
+  { value: '24–48h', label: '工作日咨询回复' },
 ]
 
 export default function Stats({ lang }) {

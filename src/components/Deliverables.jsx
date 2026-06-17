@@ -1,3 +1,5 @@
+import { SOW_DOC_URL } from '../config/site'
+
 const includedEn = [
   'Responsive React UI (mobile + desktop)',
   'Component structure you can extend',
@@ -62,6 +64,13 @@ export default function Deliverables({ lang }) {
             </ul>
           </div>
         </div>
+        <p className="deliverables-sow">
+          {isEn ? 'Formal proposals use our ' : '正式合作可使用'}
+          <a href={SOW_DOC_URL} target="_blank" rel="noopener noreferrer">
+            {isEn ? 'SOW template' : 'SOW 模板'}
+          </a>
+          {isEn ? ' (GitHub).' : '（GitHub）。'}
+        </p>
       </div>
     </section>
   )

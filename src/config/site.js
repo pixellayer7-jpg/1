@@ -10,3 +10,7 @@ export const GITHUB_PROFILE = 'https://github.com/pixellayer7-jpg'
 export const EMAIL = 'pixellayer7@gmail.com'
 
 export const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_FORM_ID || ''
+
+/** GitHub raw URL for SOW template in repo */
+export const SOW_DOC_URL =
+  'https://github.com/pixellayer7-jpg/1/blob/main/docs/SOW-TEMPLATE.md'

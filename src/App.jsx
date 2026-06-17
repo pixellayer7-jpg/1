@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import TechStack from './components/TechStack'
 import Process from './components/Process'
 import Faq from './components/Faq'
+import About from './components/About'
 import Deliverables from './components/Deliverables'
 import Legal from './components/Legal'
 import Contact from './components/Contact'
@@ -58,6 +59,7 @@ export default function App() {
         <Projects lang={lang} />
         <TechStack lang={lang} />
         <Process lang={lang} />
+        <About lang={lang} />
         <Deliverables lang={lang} />
         <Faq lang={lang} />
         <Contact lang={lang} />

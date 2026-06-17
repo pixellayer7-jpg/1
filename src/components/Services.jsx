@@ -39,7 +39,7 @@ const servicesZh = [
 export default function Services({ lang }) {
   const isEn = lang === 'en'
   const services = isEn ? servicesEn : servicesZh
-  const title = isEn ? 'What I Offer' : '可以为你提供的服务'
+  const title = isEn ? 'What We Offer' : '我们可以提供的服务'
   const subtitle = isEn
     ? 'Frontend focus. No bloat. Delivered on time.'
     : '专注前端，不做臃肿功能，在约定时间内交付可上线的版本。'

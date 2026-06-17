@@ -38,6 +38,13 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: /^FAQ$/ })).toBeInTheDocument()
   })
 
+  it('renders About section', () => {
+    render(<App />)
+    expect(
+      screen.getByRole('heading', { name: /^About PixelLayer$/ })
+    ).toBeInTheDocument()
+  })
+
   it('quote nav links to calculator', () => {
     render(<App />)
     const nav = screen.getByRole('navigation')

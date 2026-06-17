@@ -9,6 +9,8 @@ export default function Hero({ lang, setLang }) {
         navProjects: 'Work',
         navStack: 'Stack',
         navProcess: 'Process',
+        navAbout: 'About',
+        navScope: 'Scope',
         navFaq: 'FAQ',
         navContact: 'Contact',
         navQuote: 'Quote',
@@ -16,8 +18,9 @@ export default function Hero({ lang, setLang }) {
         titleHighlight: 'Convert',
         subtitle:
           'React-based frontend development for startups and small businesses. Fast, clean, and built to grow with you.',
-        primaryCta: 'Get an Instant Estimate',
-        secondaryCta: 'See Shipped Work',
+        primaryCta: 'Contact Us',
+        secondaryCta: 'Get an Estimate',
+        tertiaryCta: 'See Shipped Work',
         badgeLanding: 'Live landing',
         badgeCalc: 'Live calculator',
         badgeGithub: 'Open source',
@@ -27,6 +30,8 @@ export default function Hero({ lang, setLang }) {
         navProjects: '作品',
         navStack: '技术栈',
         navProcess: '合作方式',
+        navAbout: '关于',
+        navScope: '交付范围',
         navFaq: '常见问题',
         navContact: '联系我',
         navQuote: '报价',
@@ -34,8 +39,9 @@ export default function Hero({ lang, setLang }) {
         titleHighlight: '高转化 Web 前端',
         subtitle:
           '专注为初创公司和小企业提供 React 前端开发，加载快速、结构清晰，方便后续持续迭代。',
-        primaryCta: '在线估算报价',
-        secondaryCta: '查看已交付作品',
+        primaryCta: '联系我们',
+        secondaryCta: '在线估算报价',
+        tertiaryCta: '查看已交付作品',
         badgeLanding: '主站已上线',
         badgeCalc: '计算器已上线',
         badgeGithub: '开源仓库',
@@ -52,6 +58,8 @@ export default function Hero({ lang, setLang }) {
           <a href="#projects">{t.navProjects}</a>
           <a href="#stack">{t.navStack}</a>
           <a href="#process">{t.navProcess}</a>
+          <a href="#about">{t.navAbout}</a>
+          <a href="#deliverables">{t.navScope}</a>
           <a href="#faq">{t.navFaq}</a>
           <a href="#contact">{t.navContact}</a>
           <a
@@ -113,16 +121,19 @@ export default function Hero({ lang, setLang }) {
           </a>
         </div>
         <div className="hero-cta">
+          <a href="#contact" className="btn btn-primary">
+            {t.primaryCta}
+          </a>
           <a
             href={ESTIMATOR_URL}
-            className="btn btn-primary"
+            className="btn btn-outline"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t.primaryCta}
-          </a>
-          <a href="#projects" className="btn btn-outline">
             {t.secondaryCta}
+          </a>
+          <a href="#projects" className="btn btn-outline btn-outline--muted">
+            {t.tertiaryCta}
           </a>
         </div>
       </div>

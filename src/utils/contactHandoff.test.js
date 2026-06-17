@@ -25,3 +25,11 @@ describe('readContactHandoff', () => {
     expect(readContactHandoff()).toBeNull()
   })
 })
+
+describe('mapHandoffProjectType', () => {
+  it('maps valid calculator ids', async () => {
+    const { mapHandoffProjectType } = await import('./contactHandoff.js')
+    expect(mapHandoffProjectType('landing')).toBe('landing')
+    expect(mapHandoffProjectType('unknown')).toBe('')
+  })
+})

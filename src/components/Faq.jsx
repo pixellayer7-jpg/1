@@ -19,6 +19,14 @@ const faqEn = [
     q: 'What do you need from me to start?',
     a: 'A short brief (goals, references, deadline), brand assets or Figma if you have them, and API/docs for integrations. We agree milestones before build.',
   },
+  {
+    q: 'Payment and revisions?',
+    a: 'Typical schedule: deposit to start, balance on delivery (e.g. 50/50). Included revision rounds are defined in writing; extra scope uses a change order.',
+  },
+  {
+    q: 'Support after launch?',
+    a: 'We hand off deploy-ready code and a short walkthrough. Optional maintenance or small updates can be quoted separately.',
+  },
 ]
 
 const faqZh = [
@@ -39,6 +47,14 @@ const faqZh = [
   {
     q: '开始合作需要我准备什么？',
     a: '简要需求（目标、参考、截止日期）、品牌素材或 Figma（如有）、对接 API/文档。开工前会确认里程碑。',
+  },
+  {
+    q: '付款与修改轮次？',
+    a: '常见方式：开工订金 + 交付尾款（如 50/50）。包含的修改轮次书面约定；范围外变更需变更单。',
+  },
+  {
+    q: '上线后是否支持？',
+    a: '交付可部署代码与简要说明。可选维护或小改动可单独报价。',
   },
 ]
 
