@@ -11,6 +11,7 @@ import Deliverables from './components/Deliverables'
 import Legal from './components/Legal'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import StickyCta from './components/StickyCta'
 
 const LANG_KEY = 'pixelayer-landing-lang'
 
@@ -66,6 +67,7 @@ export default function App() {
       </main>
       <Legal lang={lang} />
       <Footer lang={lang} />
+      <StickyCta lang={lang} />
     </>
   )
 }

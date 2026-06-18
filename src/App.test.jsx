@@ -45,6 +45,16 @@ describe('App', () => {
     ).toBeInTheDocument()
   })
 
+  it('renders mobile sticky contact actions', () => {
+    render(<App />)
+    expect(
+      screen.getByRole('region', { name: /^Quick actions$/ })
+    ).toBeInTheDocument()
+    expect(
+      screen.getAllByRole('link', { name: /^Contact$/ }).length
+    ).toBeGreaterThan(0)
+  })
+
   it('quote nav links to calculator', () => {
     render(<App />)
     const nav = screen.getByRole('navigation')

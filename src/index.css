@@ -868,6 +868,10 @@ button {
 }
 
 @media (max-width: 640px) {
+  body {
+    padding-bottom: 4.5rem;
+  }
+
   .nav-links {
     gap: 1rem;
   }
@@ -882,5 +886,44 @@ button {
   .footer-inner {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* Mobile sticky CTA */
+.sticky-cta {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .sticky-cta {
+    display: flex;
+    gap: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0));
+    background: rgba(15, 23, 42, 0.95);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+
+  .sticky-cta-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .sticky-cta-btn--primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
   }
 }

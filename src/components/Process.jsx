@@ -18,6 +18,9 @@ const stepsEn = [
     n: '3',
     title: 'Launch & handoff',
     desc: 'Production deploy, repo access, and a short walkthrough so your team can maintain the UI.',
+    cta: 'Start a project',
+    href: '#contact',
+    external: false,
   },
 ]
 
@@ -39,6 +42,9 @@ const stepsZh = [
     n: '3',
     title: '上线与交接',
     desc: '部署到生产环境，交付代码仓库权限，并简要说明后续如何维护与迭代。',
+    cta: '开始联系',
+    href: '#contact',
+    external: false,
   },
 ]
 
