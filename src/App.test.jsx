@@ -45,6 +45,12 @@ describe('App', () => {
     ).toBeInTheDocument()
   })
 
+  it('renders trust bar highlights', () => {
+    render(<App />)
+    expect(screen.getByLabelText(/^Why PixelLayer$/)).toBeInTheDocument()
+    expect(screen.getByText(/^Written scope$/)).toBeInTheDocument()
+  })
+
   it('renders mobile sticky contact actions', () => {
     render(<App />)
     expect(

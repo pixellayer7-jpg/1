@@ -145,8 +145,8 @@ export default function Contact({ lang }) {
         </h2>
         <p className="section-subtitle">
           {isEn
-            ? "Tell me about your project. I'll reply within 24–48 hours."
-            : '简单介绍一下你的项目和时间计划，我会在 24–48 小时内回复你。'}
+            ? 'Tell us about your project. We reply within 24–48 hours.'
+            : '简单介绍一下你的项目和时间计划，我们会在 24–48 小时内回复。'}
         </p>
         <p className="contact-estimator-link">
           {isEn ? 'No message yet? ' : '还没有估算？'}
@@ -170,8 +170,8 @@ export default function Contact({ lang }) {
           {submitted ? (
             <p className="contact-success">
               {isEn
-                ? "Thanks! I'll get back to you soon."
-                : '已收到，我会尽快回复。'}
+                ? "Thanks! We'll get back to you soon."
+                : '已收到，我们会尽快回复。'}
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
