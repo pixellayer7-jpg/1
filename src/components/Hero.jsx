@@ -6,6 +6,7 @@ export default function Hero({ lang, setLang }) {
   const t = isEn
     ? {
         navServices: 'Services',
+        navPricing: 'Pricing',
         navProjects: 'Work',
         navStack: 'Stack',
         navProcess: 'Process',
@@ -27,6 +28,7 @@ export default function Hero({ lang, setLang }) {
       }
     : {
         navServices: '服务内容',
+        navPricing: '价格',
         navProjects: '作品',
         navStack: '技术栈',
         navProcess: '合作方式',
@@ -55,6 +57,8 @@ export default function Hero({ lang, setLang }) {
         </a>
         <div className="nav-links">
           <a href="#services">{t.navServices}</a>
+          <a href="#pricing">{t.navPricing}</a>
+          <a href="#clients">{isEn ? 'Clients' : '客户'}</a>
           <a href="#projects">{t.navProjects}</a>
           <a href="#stack">{t.navStack}</a>
           <a href="#process">{t.navProcess}</a>

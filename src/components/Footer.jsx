@@ -16,6 +16,8 @@ export default function Footer({ lang }) {
         <div className="footer-links">
           <a href="#about">{isEn ? 'About' : '关于'}</a>
           <a href="#services">{isEn ? 'Services' : '服务'}</a>
+          <a href="#pricing">{isEn ? 'Pricing' : '价格'}</a>
+          <a href="#clients">{isEn ? 'Clients' : '客户'}</a>
           <a href="#projects">{isEn ? 'Work' : '作品'}</a>
           <a href="#process">{isEn ? 'Process' : '流程'}</a>
           <a href="#deliverables">{isEn ? 'Scope' : '交付范围'}</a>

@@ -6,6 +6,9 @@ import Projects from './components/Projects'
 import TechStack from './components/TechStack'
 import Process from './components/Process'
 import Faq from './components/Faq'
+import PricingPreview from './components/PricingPreview'
+import ClientTypes from './components/ClientTypes'
+import CtaBand from './components/CtaBand'
 import About from './components/About'
 import Deliverables from './components/Deliverables'
 import Legal from './components/Legal'
@@ -59,12 +62,15 @@ export default function App() {
       <main id="main-content">
         <Stats lang={lang} />
         <Services lang={lang} />
+        <ClientTypes lang={lang} />
+        <PricingPreview lang={lang} />
         <Projects lang={lang} />
         <TechStack lang={lang} />
         <Process lang={lang} />
         <About lang={lang} />
         <Deliverables lang={lang} />
         <Faq lang={lang} />
+        <CtaBand lang={lang} />
         <Contact lang={lang} />
       </main>
       <Legal lang={lang} />

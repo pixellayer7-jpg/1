@@ -45,6 +45,16 @@ describe('App', () => {
     ).toBeInTheDocument()
   })
 
+  it('renders pricing and client sections', () => {
+    render(<App />)
+    expect(
+      screen.getByRole('heading', { name: /^Transparent starting ranges$/ })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /^Who we build for$/ })
+    ).toBeInTheDocument()
+  })
+
   it('renders trust bar highlights', () => {
     render(<App />)
     expect(screen.getByLabelText(/^Why PixelLayer$/)).toBeInTheDocument()

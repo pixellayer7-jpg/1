@@ -1,5 +1,8 @@
 import { SOW_DOC_URL } from '../config/site'
 
+const COMMERCIAL_FLOW_URL =
+  'https://github.com/pixellayer7-jpg/1/blob/main/docs/COMMERCIAL-FLOW.md'
+
 const includedEn = [
   'Responsive React UI (mobile + desktop)',
   'Component structure you can extend',
@@ -69,7 +72,15 @@ export default function Deliverables({ lang }) {
           <a href={SOW_DOC_URL} target="_blank" rel="noopener noreferrer">
             {isEn ? 'SOW template' : 'SOW 模板'}
           </a>
-          {isEn ? ' (GitHub).' : '（GitHub）。'}
+          {isEn ? ' · ' : ' · '}
+          <a
+            href={COMMERCIAL_FLOW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {isEn ? 'Commercial flow' : '商单流程'}
+          </a>
+          {isEn ? ' (GitHub docs).' : '（GitHub 文档）。'}
         </p>
       </div>
     </section>

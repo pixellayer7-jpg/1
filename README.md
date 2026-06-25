@@ -35,7 +35,10 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 - **Hero** — Clear headline and call-to-action
 - **Services** — What you offer (Landing Pages, React Apps, UI & Integration)
 - **Projects** — Types of work you can build (landing, dashboard, website)
-- **About** — Studio intro, quoting & delivery process (He Zhang / PixelLayer L.L.C)
+- **Pricing preview** — Transparent USD tiers with deep links to the calculator (`?type=`)
+- **Client types** — Who PixelLayer builds for (startups, SMB, agencies, bilingual)
+- **CTA band** — Pre-contact conversion block before the form
+- **Commercial flow doc** — `docs/COMMERCIAL-FLOW.md` (discovery → quote → handoff → SOW)
 - **Contact** — Form (Formspree-ready) with project type & timeline, mailto fallback, quote handoff from calculator
 - **Deliverables** — Typical in/out of scope for client expectations
 - **Legal** — Privacy & terms summary (not legal advice)

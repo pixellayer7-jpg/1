@@ -68,6 +68,24 @@ export default defineConfig(({ mode }) => {
               injectTo: 'head',
             },
             {
+              tag: 'link',
+              attrs: {
+                rel: 'alternate',
+                hreflang: 'en',
+                href: `${canonical}?lang=en`,
+              },
+              injectTo: 'head',
+            },
+            {
+              tag: 'link',
+              attrs: {
+                rel: 'alternate',
+                hreflang: 'zh-CN',
+                href: `${canonical}?lang=zh`,
+              },
+              injectTo: 'head',
+            },
+            {
               tag: 'script',
               attrs: { type: 'application/ld+json' },
               children: JSON.stringify({
