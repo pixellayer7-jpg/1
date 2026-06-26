@@ -25,7 +25,7 @@ export default function PricingPreview({ lang }) {
               </p>
               <p className="pricing-desc">{isEn ? tier.descEn : tier.descZh}</p>
               <a
-                href={`${ESTIMATOR_URL}?type=${tier.id}&lang=${lang}`}
+                href={`${ESTIMATOR_URL}?type=${tier.id}&lang=${lang}&utm_source=landing&utm_medium=pricing`}
                 className="pricing-link"
                 target="_blank"
                 rel="noopener noreferrer"

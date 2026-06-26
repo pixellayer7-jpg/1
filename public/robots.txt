@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://pixellayer7-jpg.github.io/1/sitemap.xml

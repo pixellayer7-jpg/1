@@ -155,6 +155,18 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0;
+  position: relative;
+}
+
+.nav-toggle {
+  display: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text);
 }
 
 .logo {
@@ -987,6 +999,17 @@ button {
   padding: 1rem;
 }
 
+.contact-success-box {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.contact-success-next {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
 .contact-error {
   color: #f87171;
   font-size: 0.9rem;
@@ -1061,14 +1084,53 @@ button {
   font-weight: 600;
 }
 
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem 1.5rem 1rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    z-index: 40;
+  }
+
+  .nav-links--open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links .lang-switch {
+    margin-top: 0.75rem;
+    justify-content: center;
+  }
+
+  .nav-links .nav-quote {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   body {
     padding-bottom: 4.5rem;
   }
 
-  .nav-links {
-    gap: 1rem;
-  }
   .form-row {
     grid-template-columns: 1fr;
   }

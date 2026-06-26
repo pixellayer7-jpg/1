@@ -168,11 +168,23 @@ export default function Contact({ lang }) {
             </p>
           ) : null}
           {submitted ? (
-            <p className="contact-success">
-              {isEn
-                ? "Thanks! We'll get back to you soon."
-                : '已收到，我们会尽快回复。'}
-            </p>
+            <div className="contact-success-box">
+              <p className="contact-success">
+                {isEn
+                  ? "Thanks! We'll get back to you soon."
+                  : '已收到，我们会尽快回复。'}
+              </p>
+              <p className="contact-success-next">
+                {isEn ? 'Want a rough range first? ' : '还没估算？'}
+                <a
+                  href={ESTIMATOR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {isEn ? 'Try the quote calculator' : '使用报价计算器'}
+                </a>
+              </p>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-row">

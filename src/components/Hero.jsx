@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
 
 export default function Hero({ lang, setLang }) {
   const isEn = lang === 'en'
+  const [navOpen, setNavOpen] = useState(false)
 
   const t = isEn
     ? {
@@ -15,6 +17,8 @@ export default function Hero({ lang, setLang }) {
         navFaq: 'FAQ',
         navContact: 'Contact',
         navQuote: 'Quote',
+        menuOpen: 'Open menu',
+        menuClose: 'Close menu',
         titleMain: 'Modern Web Apps That ',
         titleHighlight: 'Convert',
         subtitle:
@@ -37,6 +41,8 @@ export default function Hero({ lang, setLang }) {
         navFaq: '常见问题',
         navContact: '联系我',
         navQuote: '报价',
+        menuOpen: '打开菜单',
+        menuClose: '关闭菜单',
         titleMain: '为你打造现代化 ',
         titleHighlight: '高转化 Web 前端',
         subtitle:
@@ -49,28 +55,65 @@ export default function Hero({ lang, setLang }) {
         badgeGithub: '开源仓库',
       }
 
+  function closeNav() {
+    setNavOpen(false)
+  }
+
   return (
     <header className="hero">
-      <nav className="nav container">
-        <a href="#" className="logo">
+      <nav className="nav container" aria-label={isEn ? 'Main' : '主导航'}>
+        <a href="#" className="logo" onClick={closeNav}>
           PixelLayer L.L.C
         </a>
-        <div className="nav-links">
-          <a href="#services">{t.navServices}</a>
-          <a href="#pricing">{t.navPricing}</a>
-          <a href="#clients">{isEn ? 'Clients' : '客户'}</a>
-          <a href="#projects">{t.navProjects}</a>
-          <a href="#stack">{t.navStack}</a>
-          <a href="#process">{t.navProcess}</a>
-          <a href="#about">{t.navAbout}</a>
-          <a href="#deliverables">{t.navScope}</a>
-          <a href="#faq">{t.navFaq}</a>
-          <a href="#contact">{t.navContact}</a>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={navOpen}
+          aria-controls="site-nav-links"
+          onClick={() => setNavOpen((o) => !o)}
+        >
+          {navOpen ? t.menuClose : t.menuOpen}
+        </button>
+        <div
+          id="site-nav-links"
+          className={`nav-links${navOpen ? ' nav-links--open' : ''}`}
+        >
+          <a href="#services" onClick={closeNav}>
+            {t.navServices}
+          </a>
+          <a href="#pricing" onClick={closeNav}>
+            {t.navPricing}
+          </a>
+          <a href="#clients" onClick={closeNav}>
+            {isEn ? 'Clients' : '客户'}
+          </a>
+          <a href="#projects" onClick={closeNav}>
+            {t.navProjects}
+          </a>
+          <a href="#stack" onClick={closeNav}>
+            {t.navStack}
+          </a>
+          <a href="#process" onClick={closeNav}>
+            {t.navProcess}
+          </a>
+          <a href="#about" onClick={closeNav}>
+            {t.navAbout}
+          </a>
+          <a href="#deliverables" onClick={closeNav}>
+            {t.navScope}
+          </a>
+          <a href="#faq" onClick={closeNav}>
+            {t.navFaq}
+          </a>
+          <a href="#contact" onClick={closeNav}>
+            {t.navContact}
+          </a>
           <a
             href={ESTIMATOR_URL}
             className="nav-quote"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={closeNav}
           >
             {t.navQuote}
           </a>
