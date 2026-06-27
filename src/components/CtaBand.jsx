@@ -1,7 +1,10 @@
-import { ESTIMATOR_URL, EMAIL } from '../config/site'
+import { ESTIMATOR_URL, EMAIL, BOOKING_URL } from '../config/site'
 
 export default function CtaBand({ lang }) {
   const isEn = lang === 'en'
+  const bookingHref =
+    BOOKING_URL ||
+    `mailto:${EMAIL}?subject=${encodeURIComponent(isEn ? 'Schedule a call — PixelLayer' : '预约沟通 — PixelLayer')}`
 
   return (
     <section
@@ -31,6 +34,14 @@ export default function CtaBand({ lang }) {
           </a>
           <a href={`mailto:${EMAIL}`} className="cta-band-email">
             {EMAIL}
+          </a>
+          <a
+            href={bookingHref}
+            className="btn btn-outline cta-band-book"
+            target={BOOKING_URL ? '_blank' : undefined}
+            rel={BOOKING_URL ? 'noopener noreferrer' : undefined}
+          >
+            {isEn ? 'Book a call' : '预约沟通'}
           </a>
         </div>
       </div>

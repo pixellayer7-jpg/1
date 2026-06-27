@@ -24,6 +24,10 @@ const faqEn = [
     a: 'Typical schedule: deposit to start, balance on delivery (e.g. 50/50). Included revision rounds are defined in writing; extra scope uses a change order.',
   },
   {
+    q: 'Can I get a written SOW from the calculator?',
+    a: 'Yes — v2.0 adds “Download SOW draft” (Markdown) pre-filled from your selections. Fill client placeholders and dates before signing.',
+  },
+  {
     q: 'Support after launch?',
     a: 'We hand off deploy-ready code and a short walkthrough. Optional maintenance or small updates can be quoted separately.',
   },
@@ -51,6 +55,10 @@ const faqZh = [
   {
     q: '付款与修改轮次？',
     a: '常见方式：开工订金 + 交付尾款（如 50/50）。包含的修改轮次书面约定；范围外变更需变更单。',
+  },
+  {
+    q: '计算器能导出书面 SOW 吗？',
+    a: '可以 — v2.0 支持「下载 SOW 草案」（Markdown），会根据你的选项预填，签前请补全客户信息与日期。',
   },
   {
     q: '上线后是否支持？',

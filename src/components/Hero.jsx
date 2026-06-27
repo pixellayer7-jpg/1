@@ -90,6 +90,9 @@ export default function Hero({ lang, setLang }) {
           <a href="#projects" onClick={closeNav}>
             {t.navProjects}
           </a>
+          <a href="#cases" onClick={closeNav}>
+            {isEn ? 'Patterns' : '模式'}
+          </a>
           <a href="#stack" onClick={closeNav}>
             {t.navStack}
           </a>

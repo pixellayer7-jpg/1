@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react'
-import { EMAIL, ESTIMATOR_URL, FORMSPREE_ID } from '../config/site'
+import {
+  EMAIL,
+  ESTIMATOR_URL,
+  FORMSPREE_ID,
+  LEAD_API_URL,
+} from '../config/site'
 import {
   readContactHandoff,
   mapHandoffProjectType,
 } from '../utils/contactHandoff'
 import { buildMailtoHref } from '../utils/mailto'
+import { normalizeLeadApiBase, postLeadSnapshot } from '../utils/leadApi'
 
 const PROJECT_TYPES_EN = [
   { value: '', label: 'Select…' },
@@ -39,6 +45,9 @@ const TIMELINE_ZH = [
 export default function Contact({ lang }) {
   const isEn = lang === 'en'
   const formsEnabled = Boolean(FORMSPREE_ID)
+  const leadApiBase = normalizeLeadApiBase(LEAD_API_URL)
+  const leadApiEnabled = Boolean(leadApiBase)
+  const canSubmitOnline = formsEnabled || leadApiEnabled
   const types = isEn ? PROJECT_TYPES_EN : PROJECT_TYPES_ZH
   const timelines = isEn ? TIMELINE_EN : TIMELINE_ZH
 
@@ -105,30 +114,52 @@ export default function Contact({ lang }) {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (!formsEnabled) return
+    if (!canSubmitOnline) return
     setError(false)
     setLoading(true)
+    const quoteRefId = typeof handoffRef === 'string' ? handoffRef : null
+    const leadPayload = {
+      name,
+      email,
+      message: [
+        message,
+        projectType ? `Project type: ${projectType}` : '',
+        timeline ? `Timeline: ${timeline}` : '',
+        subject ? `Company/product: ${subject}` : '',
+      ]
+        .filter(Boolean)
+        .join('\n\n'),
+      subject: subject || null,
+      projectType: projectType || null,
+      timeline: timeline || null,
+      quoteRef: quoteRefId,
+      source: 'landing',
+      lang,
+    }
     try {
-      const body = new FormData()
-      body.set('name', name)
-      body.set('email', email)
-      if (subject) body.set('subject', subject)
-      body.set(
-        'message',
-        [
-          message,
-          projectType ? `Project type: ${projectType}` : '',
-          timeline ? `Timeline: ${timeline}` : '',
-        ]
-          .filter(Boolean)
-          .join('\n\n')
-      )
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        body,
-        headers: { Accept: 'application/json' },
-      })
-      if (res.ok) setSubmitted(true)
+      let ok = false
+      if (formsEnabled) {
+        const body = new FormData()
+        body.set('name', name)
+        body.set('email', email)
+        if (subject) body.set('subject', subject)
+        body.set('message', leadPayload.message)
+        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          body,
+          headers: { Accept: 'application/json' },
+        })
+        ok = res.ok
+      }
+      if (leadApiEnabled) {
+        try {
+          await postLeadSnapshot(leadApiBase, leadPayload)
+          ok = true
+        } catch {
+          if (!formsEnabled) ok = false
+        }
+      }
+      if (ok) setSubmitted(true)
       else setError(true)
     } catch {
       setError(true)
@@ -160,7 +191,7 @@ export default function Contact({ lang }) {
           </p>
         ) : null}
         <div className="contact-box">
-          {!formsEnabled && !submitted ? (
+          {!canSubmitOnline && !submitted ? (
             <p className="contact-fallback">
               {isEn
                 ? 'Email is the fastest way to reach us while the online form is being configured.'
@@ -286,7 +317,7 @@ export default function Contact({ lang }) {
                 </p>
               )}
               <div className="contact-actions">
-                {formsEnabled ? (
+                {canSubmitOnline ? (
                   <button
                     type="submit"
                     className="btn btn-primary"

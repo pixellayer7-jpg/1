@@ -71,6 +71,16 @@ describe('App', () => {
     ).toBeGreaterThan(0)
   })
 
+  it('renders case studies and testimonials', () => {
+    render(<App />)
+    expect(
+      screen.getByRole('heading', { name: /^Engagement patterns$/ })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /^What clients say$/ })
+    ).toBeInTheDocument()
+  })
+
   it('quote nav links to calculator', () => {
     render(<App />)
     const nav = screen.getByRole('navigation')

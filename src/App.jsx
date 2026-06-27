@@ -15,6 +15,8 @@ import Legal from './components/Legal'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import StickyCta from './components/StickyCta'
+import Testimonials from './components/Testimonials'
+import CaseStudies from './components/CaseStudies'
 import TrustBar from './components/TrustBar'
 
 const LANG_KEY = 'pixelayer-landing-lang'
@@ -65,6 +67,8 @@ export default function App() {
         <ClientTypes lang={lang} />
         <PricingPreview lang={lang} />
         <Projects lang={lang} />
+        <CaseStudies lang={lang} />
+        <Testimonials lang={lang} />
         <TechStack lang={lang} />
         <Process lang={lang} />
         <About lang={lang} />
