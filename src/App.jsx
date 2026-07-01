@@ -18,6 +18,7 @@ import StickyCta from './components/StickyCta'
 import Testimonials from './components/Testimonials'
 import CaseStudies from './components/CaseStudies'
 import TrustBar from './components/TrustBar'
+import EcosystemStrip from './components/EcosystemStrip'
 
 const LANG_KEY = 'pixelayer-landing-lang'
 
@@ -60,6 +61,7 @@ export default function App() {
         {skipContact}
       </a>
       <Hero lang={lang} setLang={setLang} />
+      <EcosystemStrip lang={lang} />
       <TrustBar lang={lang} />
       <main id="main-content">
         <Stats lang={lang} />

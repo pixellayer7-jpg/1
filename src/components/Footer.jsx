@@ -27,6 +27,13 @@ export default function Footer({ lang }) {
           <a href={ESTIMATOR_URL} target="_blank" rel="noopener noreferrer">
             {isEn ? 'Quote tool' : '报价工具'}
           </a>
+          <a
+            href={`${ESTIMATOR_URL.replace(/\/?$/, '/')}?admin=1`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {isEn ? 'CRM admin' : 'CRM 管理'}
+          </a>
           <a href={GITHUB_PROFILE} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>

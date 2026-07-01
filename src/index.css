@@ -125,6 +125,42 @@ button {
   background: rgba(14, 165, 233, 0.1);
 }
 
+/* Ecosystem strip */
+.ecosystem-strip {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 0.875rem;
+}
+
+.ecosystem-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.ecosystem-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+}
+
+.ecosystem-sep {
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.ecosystem-inner a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.ecosystem-inner a:hover {
+  text-decoration: underline;
+}
+
 /* Hero */
 .hero {
   min-height: 100vh;
