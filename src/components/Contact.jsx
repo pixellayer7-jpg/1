@@ -5,12 +5,9 @@ import {
   FORMSPREE_ID,
   LEAD_API_URL,
 } from '../config/site'
-import {
-  readContactHandoff,
-  mapHandoffProjectType,
-} from '../utils/contactHandoff'
 import { buildMailtoHref } from '../utils/mailto'
 import { normalizeLeadApiBase, postLeadSnapshot } from '../utils/leadApi'
+import { hydrateContactForm } from '../utils/hydrateContact'
 
 const PROJECT_TYPES_EN = [
   { value: '', label: 'Select…' },
@@ -62,25 +59,26 @@ export default function Contact({ lang }) {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  const [hydrating, setHydrating] = useState(true)
 
   useEffect(() => {
-    const data = readContactHandoff()
-    if (!data) return
-    setMessage(data.summary)
-    setHandoffRef(data.quoteRef ?? true)
-    const mapped = mapHandoffProjectType(data.projectType)
-    if (mapped) setProjectType(mapped)
-    if (
-      typeof data.min === 'number' &&
-      typeof data.max === 'number' &&
-      Number.isFinite(data.min) &&
-      Number.isFinite(data.max)
-    ) {
-      setHandoffRange(
-        `$${data.min.toLocaleString()} – $${data.max.toLocaleString()} USD`
-      )
+    let cancelled = false
+    ;(async () => {
+      const data = await hydrateContactForm(leadApiBase, lang)
+      if (cancelled || !data) {
+        if (!cancelled) setHydrating(false)
+        return
+      }
+      setMessage(data.summary)
+      setHandoffRef(data.quoteRef ?? true)
+      if (data.projectType) setProjectType(data.projectType)
+      if (data.range) setHandoffRange(data.range)
+      if (!cancelled) setHydrating(false)
+    })()
+    return () => {
+      cancelled = true
     }
-  }, [])
+  }, [lang, leadApiBase])
 
   const handoffNote =
     handoffRef === null
@@ -188,6 +186,10 @@ export default function Contact({ lang }) {
         {handoffNote ? (
           <p className="contact-handoff-note" role="status">
             {handoffNote}
+          </p>
+        ) : hydrating ? (
+          <p className="contact-handoff-note" role="status">
+            {isEn ? 'Loading saved estimate…' : '正在载入已保存估算…'}
           </p>
         ) : null}
         <div className="contact-box">

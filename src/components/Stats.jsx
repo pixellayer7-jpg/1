@@ -1,4 +1,6 @@
-import { GITHUB_PROFILE } from '../config/site'
+import { useEffect, useMemo, useState } from 'react'
+import { GITHUB_PROFILE, LEAD_API_URL } from '../config/site'
+import { normalizeLeadApiBase, fetchStats } from '../utils/leadApi'
 
 const statsEn = [
   { value: '1–2 wk', label: 'Typical landing page delivery' },
@@ -16,7 +18,33 @@ const statsZh = [
 
 export default function Stats({ lang }) {
   const isEn = lang === 'en'
-  const items = isEn ? statsEn : statsZh
+  const apiBase = normalizeLeadApiBase(LEAD_API_URL)
+  const [live, setLive] = useState(null)
+
+  useEffect(() => {
+    if (!apiBase) return
+    let cancelled = false
+    fetchStats(apiBase)
+      .then((data) => {
+        if (!cancelled) setLive(data)
+      })
+      .catch(() => {})
+    return () => {
+      cancelled = true
+    }
+  }, [apiBase])
+
+  const items = useMemo(() => {
+    const base = isEn ? [...statsEn] : [...statsZh]
+    if (live && typeof live.totalQuotes === 'number' && live.totalQuotes > 0) {
+      base[0] = {
+        value: String(live.totalQuotes),
+        label: isEn ? 'Quotes saved online' : '已保存线上估算',
+      }
+    }
+    return base
+  }, [isEn, live])
+
   const title = isEn ? 'By the numbers' : '数据一览'
   const github = isEn ? 'View source on GitHub' : '在 GitHub 查看源码'
 
