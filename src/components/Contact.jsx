@@ -6,6 +6,7 @@ import {
   LEAD_API_URL,
 } from '../config/site'
 import { buildMailtoHref } from '../utils/mailto'
+import { copyTextToClipboard } from '../utils/copyEmail'
 import { normalizeLeadApiBase, postLeadSnapshot } from '../utils/leadApi'
 import { hydrateContactForm } from '../utils/hydrateContact'
 
@@ -39,6 +40,8 @@ const TIMELINE_ZH = [
   { value: 'flex', label: '时间灵活' },
 ]
 
+const COPY_RESET_MS = 2000
+
 export default function Contact({ lang }) {
   const isEn = lang === 'en'
   const formsEnabled = Boolean(FORMSPREE_ID)
@@ -60,6 +63,7 @@ export default function Contact({ lang }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [hydrating, setHydrating] = useState(true)
+  const [emailCopied, setEmailCopied] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -79,6 +83,12 @@ export default function Contact({ lang }) {
       cancelled = true
     }
   }, [lang, leadApiBase])
+
+  useEffect(() => {
+    if (!emailCopied) return undefined
+    const timer = window.setTimeout(() => setEmailCopied(false), COPY_RESET_MS)
+    return () => window.clearTimeout(timer)
+  }, [emailCopied])
 
   const handoffNote =
     handoffRef === null
@@ -104,11 +114,36 @@ export default function Contact({ lang }) {
     ? 'Project inquiry — PixelLayer L.L.C'
     : '项目咨询 — PixelLayer L.L.C'
   const mailBodyParts = [
+    name ? (isEn ? `Name: ${name}` : `姓名：${name}`) : '',
+    email ? (isEn ? `Reply-to: ${email}` : `回复邮箱：${email}`) : '',
     message,
-    projectType ? `\nProject type: ${projectType}` : '',
-    timeline ? `\nTimeline: ${timeline}` : '',
+    subject
+      ? isEn
+        ? `Company/product: ${subject}`
+        : `公司/产品：${subject}`
+      : '',
+    projectType
+      ? isEn
+        ? `Project type: ${projectType}`
+        : `项目类型：${projectType}`
+      : '',
+    timeline ? (isEn ? `Timeline: ${timeline}` : `期望时间：${timeline}`) : '',
+    typeof handoffRef === 'string'
+      ? isEn
+        ? `Quote ref: ${handoffRef}`
+        : `估算编号：${handoffRef}`
+      : '',
   ].filter(Boolean)
-  const mailtoHref = buildMailtoHref(EMAIL, mailSubject, mailBodyParts.join(''))
+  const mailtoHref = buildMailtoHref(
+    EMAIL,
+    mailSubject,
+    mailBodyParts.join('\n\n')
+  )
+
+  async function handleCopyEmail() {
+    const ok = await copyTextToClipboard(EMAIL)
+    if (ok) setEmailCopied(true)
+  }
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -174,8 +209,8 @@ export default function Contact({ lang }) {
         </h2>
         <p className="section-subtitle">
           {isEn
-            ? 'Tell us about your project. We reply within 24–48 hours.'
-            : '简单介绍一下你的项目和时间计划，我们会在 24–48 小时内回复。'}
+            ? 'Email is the fastest way to reach us — we reply within 24–48 hours.'
+            : '发邮件联系我们最快 — 我们会在 24–48 小时内回复。'}
         </p>
         <p className="contact-estimator-link">
           {isEn ? 'No message yet? ' : '还没有估算？'}
@@ -192,14 +227,40 @@ export default function Contact({ lang }) {
             {isEn ? 'Loading saved estimate…' : '正在载入已保存估算…'}
           </p>
         ) : null}
+        <div
+          className="contact-email-primary"
+          role="region"
+          aria-label={isEn ? 'Email contact' : '邮件联系'}
+        >
+          <p className="contact-email-label">
+            {isEn ? 'Direct email' : '联系邮箱'}
+          </p>
+          <div className="contact-email-row">
+            <a href={`mailto:${EMAIL}`} className="contact-email-address">
+              {EMAIL}
+            </a>
+            <button
+              type="button"
+              className="btn btn-ghost contact-copy-btn"
+              onClick={handleCopyEmail}
+              aria-live="polite"
+            >
+              {emailCopied
+                ? isEn
+                  ? 'Copied!'
+                  : '已复制'
+                : isEn
+                  ? 'Copy email'
+                  : '复制邮箱'}
+            </button>
+          </div>
+          <p className="contact-email-hint">
+            {isEn
+              ? 'No signup required — use your email app or copy the address above.'
+              : '无需注册 — 使用邮件应用或复制上方地址即可。'}
+          </p>
+        </div>
         <div className="contact-box">
-          {!canSubmitOnline && !submitted ? (
-            <p className="contact-fallback">
-              {isEn
-                ? 'Email is the fastest way to reach us while the online form is being configured.'
-                : '在线表单配置中，请优先通过邮件联系。'}
-            </p>
-          ) : null}
           {submitted ? (
             <div className="contact-success-box">
               <p className="contact-success">
@@ -220,6 +281,11 @@ export default function Contact({ lang }) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
+              <p className="contact-form-intro">
+                {isEn
+                  ? 'Optional: add project details below — your email app will be pre-filled when you tap “Email inquiry”.'
+                  : '可选：填写项目信息 — 点击「邮件咨询」时我们会预填到邮件正文。'}
+              </p>
               <div className="form-row">
                 <div className="form-field">
                   <label htmlFor="contact-name">
@@ -231,8 +297,8 @@ export default function Contact({ lang }) {
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    required
                     maxLength={120}
+                    autoComplete="name"
                   />
                 </div>
                 <div className="form-field">
@@ -245,8 +311,8 @@ export default function Contact({ lang }) {
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
                     maxLength={320}
+                    autoComplete="email"
                   />
                 </div>
               </div>
@@ -307,7 +373,6 @@ export default function Contact({ lang }) {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={6}
-                  required
                   maxLength={8000}
                 />
               </div>
@@ -319,10 +384,13 @@ export default function Contact({ lang }) {
                 </p>
               )}
               <div className="contact-actions">
+                <a href={mailtoHref} className="btn btn-primary">
+                  {isEn ? 'Email inquiry' : '邮件咨询'}
+                </a>
                 {canSubmitOnline ? (
                   <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-outline"
                     disabled={loading}
                   >
                     {loading
@@ -330,28 +398,23 @@ export default function Contact({ lang }) {
                         ? 'Sending…'
                         : '发送中…'
                       : isEn
-                        ? 'Send Message'
-                        : '发送消息'}
+                        ? 'Send online'
+                        : '在线发送'}
                   </button>
                 ) : null}
-                <a href={mailtoHref} className="btn btn-outline">
-                  {isEn ? 'Email instead' : '改用邮件发送'}
-                </a>
               </div>
-              <p className="contact-legal-note">
-                {isEn
-                  ? 'By submitting you agree to our '
-                  : '提交即表示你已阅读'}
-                <a href="#privacy">{isEn ? 'privacy summary' : '隐私说明'}</a>
-                {isEn ? '.' : '。'}
-              </p>
+              {canSubmitOnline ? (
+                <p className="contact-legal-note">
+                  {isEn
+                    ? 'Online submit is optional. By sending you agree to our '
+                    : '在线发送为可选。提交即表示你已阅读'}
+                  <a href="#privacy">{isEn ? 'privacy summary' : '隐私说明'}</a>
+                  {isEn ? '.' : '。'}
+                </p>
+              ) : null}
             </form>
           )}
         </div>
-        <p className="contact-email">
-          {isEn ? 'Direct email:' : '直接邮件：'}{' '}
-          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-        </p>
       </div>
     </section>
   )
