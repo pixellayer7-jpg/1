@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.2.0',
+    date: '2026-07-13',
+    product: 'stack',
+    titleEn: 'CRM demo mode + printable proposal & deposit invoice',
+    titleZh: 'CRM 演示模式 + 可打印提案与定金发票',
+    highlightsEn: [
+      'Calculator CRM (?admin=1) works offline with seed data — no API secrets for walkthroughs',
+      'Print-ready SOW HTML and deposit invoice drafts from the same quote state',
+      'Client reply templates for estimate → SOW → deposit ops',
+    ],
+    highlightsZh: [
+      '计算器 CRM（?admin=1）零 API 演示数据，面试走查可用',
+      '同一报价可打印 HTML 提案与定金发票草案',
+      '估算 → SOW → 定金的客户回复邮件模板',
+    ],
+  },
+  {
     version: '2.1.3',
     date: '2026-07-10',
     product: 'landing',

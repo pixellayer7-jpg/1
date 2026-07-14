@@ -13,6 +13,7 @@ How prospects move from discovery to a signed proposal.
 - Pricing cards on the landing page deep-link with `?type=landing|website|dashboard&lang=en|zh`
 - User selects add-ons, extra sections, gets USD range + quote reference UUID
 - **v2.0:** Download **SOW draft** (Markdown) from the calculator
+- **v2.2:** Print-ready **HTML proposal (SOW)** + **deposit invoice** draft; CRM **demo mode** for `?admin=1` without API secrets
 
 ## 3. Handoff to contact
 
@@ -37,6 +38,6 @@ How prospects move from discovery to a signed proposal.
 - [ ] Formspree secret on landing + calculator repos
 - [ ] `VITE_LEAD_API_URL` on both frontends when API is live
 - [ ] `LIST_QUOTES_TOKEN` on API for admin list + PATCH
-- [ ] Reply templates (acknowledgment → scope → SOW)
+- [x] Reply templates (acknowledgment → scope → SOW): [CLIENT-REPLY-TEMPLATES.md](./CLIENT-REPLY-TEMPLATES.md)
 - [ ] Custom domain (optional)
 - [ ] Calendly or booking link in `VITE_BOOKING_URL`

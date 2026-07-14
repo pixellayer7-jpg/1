@@ -1,7 +1,7 @@
 {
   "name": "client-landing",
   "private": true,
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "PixelLayer L.L.C — React + Vite landing page for frontend & web development services.",
   "keywords": [
     "react",
