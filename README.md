@@ -39,7 +39,9 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 - **Client types** — Who PixelLayer builds for (startups, SMB, agencies, bilingual)
 - **CTA band** — Pre-contact conversion block before the form
 - **Commercial flow doc** — `docs/COMMERCIAL-FLOW.md` (discovery → quote → handoff → SOW)
-- **Contact** — Form (Formspree-ready) with project type & timeline, mailto fallback, quote handoff from calculator
+- **FAQ** — Common client questions before contact
+- **Changelog** — Bilingual release timeline for landing / calculator / API (`#changelog`)
+- **Contact** — Mailto-first with one-click copy email; optional Formspree/API when configured
 - **Deliverables** — Typical in/out of scope for client expectations
 - **Legal** — Privacy & terms summary (not legal advice)
 - **SOW template** — `docs/SOW-TEMPLATE.md` for written proposals

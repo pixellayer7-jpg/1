@@ -38,6 +38,19 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: /^FAQ$/ })).toBeInTheDocument()
   })
 
+  it('renders Changelog section with latest release', () => {
+    render(<App />)
+    expect(
+      screen.getByRole('heading', { name: /^Changelog$/ })
+    ).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.1\.3$/)).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: /Public changelog on the marketing site/,
+      })
+    ).toBeInTheDocument()
+  })
+
   it('renders About section', () => {
     render(<App />)
     expect(

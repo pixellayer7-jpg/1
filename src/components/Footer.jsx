@@ -22,6 +22,7 @@ export default function Footer({ lang }) {
           <a href="#process">{isEn ? 'Process' : '流程'}</a>
           <a href="#deliverables">{isEn ? 'Scope' : '交付范围'}</a>
           <a href="#faq">{isEn ? 'FAQ' : '常见问题'}</a>
+          <a href="#changelog">{isEn ? 'Changelog' : '更新日志'}</a>
           <a href="#contact">{isEn ? 'Contact' : '联系'}</a>
           <a href="#privacy">{isEn ? 'Privacy' : '隐私'}</a>
           <a href={ESTIMATOR_URL} target="_blank" rel="noopener noreferrer">

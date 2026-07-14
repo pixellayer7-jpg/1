@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import TechStack from './components/TechStack'
 import Process from './components/Process'
 import Faq from './components/Faq'
+import Changelog from './components/Changelog'
 import PricingPreview from './components/PricingPreview'
 import ClientTypes from './components/ClientTypes'
 import CtaBand from './components/CtaBand'
@@ -76,6 +77,7 @@ export default function App() {
         <About lang={lang} />
         <Deliverables lang={lang} />
         <Faq lang={lang} />
+        <Changelog lang={lang} />
         <CtaBand lang={lang} />
         <Contact lang={lang} />
       </main>

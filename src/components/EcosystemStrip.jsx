@@ -37,6 +37,10 @@ export default function EcosystemStrip({ lang }) {
         >
           {isEn ? 'Quote API' : '报价 API'}
         </a>
+        <span className="ecosystem-sep" aria-hidden="true">
+          ·
+        </span>
+        <a href="#changelog">{isEn ? 'Changelog' : '更新日志'}</a>
       </div>
     </aside>
   )
