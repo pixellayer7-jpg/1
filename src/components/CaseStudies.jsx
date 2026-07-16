@@ -3,12 +3,25 @@ import { caseStudiesEn, caseStudiesZh } from '../data/caseStudies'
 export default function CaseStudies({ lang }) {
   const isEn = lang === 'en'
   const items = isEn ? caseStudiesEn : caseStudiesZh
-  const title = isEn ? 'Engagement patterns' : '典型合作模式'
+  const title = isEn ? 'Case studies' : '案例研究'
   const subtitle = isEn
-    ? 'How we scope and deliver — illustrated with open-source demos you can inspect today.'
-    : '我们如何定范围与交付 — 以下均可通过开源演示亲自验证。'
-  const clientLabel = isEn ? 'Profile' : '客户画像'
-  const outcomeLabel = isEn ? 'Delivery' : '交付要点'
+    ? 'Representative engagements — problem, constraint, delivery, and metrics. Each pattern maps to a live open-source demo you can inspect.'
+    : '典型合作 — 问题、约束、交付与结果指标。每种模式都对应可检查的开源在线演示。'
+  const labels = isEn
+    ? {
+        client: 'Profile',
+        problem: 'Problem',
+        constraint: 'Constraint',
+        delivery: 'Delivery',
+        metrics: 'Metrics',
+      }
+    : {
+        client: '客户画像',
+        problem: '问题',
+        constraint: '约束',
+        delivery: '交付',
+        metrics: '结果指标',
+      }
 
   return (
     <section id="cases" className="section case-studies">
@@ -20,13 +33,24 @@ export default function CaseStudies({ lang }) {
             <article key={c.id} className="case-study-card">
               <h3>{c.title}</h3>
               <p className="case-study-client">
-                <span className="case-study-label">{clientLabel}:</span>{' '}
+                <span className="case-study-label">{labels.client}</span>
                 {c.client}
               </p>
-              <p className="case-study-outcome">
-                <span className="case-study-label">{outcomeLabel}:</span>{' '}
-                {c.outcome}
-              </p>
+              <dl className="case-study-dl">
+                <div className="case-study-row">
+                  <dt>{labels.problem}</dt>
+                  <dd>{c.problem}</dd>
+                </div>
+                <div className="case-study-row">
+                  <dt>{labels.constraint}</dt>
+                  <dd>{c.constraint}</dd>
+                </div>
+                <div className="case-study-row">
+                  <dt>{labels.delivery}</dt>
+                  <dd>{c.delivery}</dd>
+                </div>
+              </dl>
+              <p className="case-study-metrics-label">{labels.metrics}</p>
               <ul className="case-study-metrics">
                 {c.metrics.map((m) => (
                   <li key={m}>{m}</li>

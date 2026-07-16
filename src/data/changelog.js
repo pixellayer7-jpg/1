@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.5',
+    date: '2026-07-15',
+    product: 'landing',
+    titleEn: 'Deeper case studies (problem → metrics)',
+    titleZh: '案例研究加深（问题 → 指标）',
+    highlightsEn: [
+      'Each case now documents problem, constraint, delivery, and metrics',
+      'Links map to live demos (landing, pricing, calculator/CRM)',
+    ],
+    highlightsZh: [
+      '每个案例写明问题、约束、交付与结果指标',
+      '链接对应在线演示（主站、定价、计算器/CRM）',
+    ],
+  },
+  {
     version: '2.2.0',
     date: '2026-07-13',
     product: 'stack',

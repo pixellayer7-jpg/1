@@ -43,10 +43,10 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Changelog$/ })
     ).toBeInTheDocument()
-    expect(screen.getByText(/^v2\.2\.0$/)).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.1\.5$/)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /CRM demo mode \+ printable proposal/,
+        name: /Deeper case studies/,
       })
     ).toBeInTheDocument()
   })
@@ -87,8 +87,11 @@ describe('App', () => {
   it('renders case studies and testimonials', () => {
     render(<App />)
     expect(
-      screen.getByRole('heading', { name: /^Engagement patterns$/ })
+      screen.getByRole('heading', { name: /^Case studies$/ })
     ).toBeInTheDocument()
+    expect(screen.getAllByText(/^Problem$/).length).toBe(3)
+    expect(screen.getAllByText(/^Constraint$/).length).toBe(3)
+    expect(screen.getAllByText(/^Delivery$/).length).toBe(3)
     expect(
       screen.getByRole('heading', { name: /^What clients say$/ })
     ).toBeInTheDocument()
