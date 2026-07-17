@@ -4,6 +4,7 @@ export default function EcosystemStrip({ lang }) {
   const isEn = lang === 'en'
   const landing = SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`
   const adminUrl = `${ESTIMATOR_URL.replace(/\/?$/, '/')}?admin=1`
+  const portalUrl = `${ESTIMATOR_URL.replace(/\/?$/, '/')}?portal=demo`
 
   return (
     <aside
@@ -26,6 +27,12 @@ export default function EcosystemStrip({ lang }) {
         </span>
         <a href={adminUrl} target="_blank" rel="noopener noreferrer">
           {isEn ? 'CRM admin' : 'CRM 管理'}
+        </a>
+        <span className="ecosystem-sep" aria-hidden="true">
+          ·
+        </span>
+        <a href={portalUrl} target="_blank" rel="noopener noreferrer">
+          {isEn ? 'Client portal' : '客户状态页'}
         </a>
         <span className="ecosystem-sep" aria-hidden="true">
           ·

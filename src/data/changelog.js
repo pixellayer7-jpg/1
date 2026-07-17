@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.3.0',
+    date: '2026-07-16',
+    product: 'stack',
+    titleEn: 'Client project status portal demo',
+    titleZh: '客户项目状态页演示',
+    highlightsEn: [
+      'Zero-config ?portal=demo with progress, milestones, deliverables, updates, and next action',
+      'Linked from CRM admin and both product ecosystem strips',
+      'Representative data only — no real client information',
+    ],
+    highlightsZh: [
+      '零配置 ?portal=demo：进度、里程碑、交付物、动态与下一步',
+      '从 CRM 管理和两站产品链入口均可访问',
+      '仅使用典型演示数据，不包含真实客户信息',
+    ],
+  },
+  {
     version: '2.1.5',
     date: '2026-07-15',
     product: 'landing',

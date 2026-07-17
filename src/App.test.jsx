@@ -43,10 +43,10 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Changelog$/ })
     ).toBeInTheDocument()
-    expect(screen.getByText(/^v2\.1\.5$/)).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.3\.0$/)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /Deeper case studies/,
+        name: /Client project status portal demo/,
       })
     ).toBeInTheDocument()
   })
