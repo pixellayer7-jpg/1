@@ -38,6 +38,16 @@ export default function EcosystemStrip({ lang }) {
           ·
         </span>
         <a
+          href={`${ESTIMATOR_URL.replace(/\/?$/, '/')}?proposal=sow`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {isEn ? 'Proposal' : '提案'}
+        </a>
+        <span className="ecosystem-sep" aria-hidden="true">
+          ·
+        </span>
+        <a
           href={`${GITHUB_PROFILE}/estimator-api`}
           target="_blank"
           rel="noopener noreferrer"

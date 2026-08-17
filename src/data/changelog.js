@@ -4,6 +4,40 @@
  */
 export const changelogEntries = [
   {
+    version: '2.5.0',
+    date: '2026-08-17',
+    product: 'stack',
+    titleEn: 'Shareable in-app proposal + named client',
+    titleZh: '可分享站内提案 + 客户名称贯通',
+    highlightsEn: [
+      'Calculator “Open proposal” opens ?proposal=sow with the same price, scope, and quote ID',
+      'Clients review SOW / deposit invoice in-app, then Accept into the matching portal',
+      'Optional client name flows through proposal, invoice, portal, and share links — still zero-config',
+    ],
+    highlightsZh: [
+      '计算器「打开提案」打开 ?proposal=sow，价格、范围与报价编号一致',
+      '客户可在站内审阅 SOW / 定金发票，接受后进入对应门户',
+      '可选客户名称贯通提案、发票、门户与分享链接 — 仍为零配置',
+    ],
+  },
+  {
+    version: '2.4.0',
+    date: '2026-08-17',
+    product: 'stack',
+    titleEn: 'Quote-hydrated client portal + accept scope',
+    titleZh: '报价灌水的客户门户 + 接受范围',
+    highlightsEn: [
+      'Calculator “Preview client portal” opens ?portal=quote with the same price, scope, and quote ID',
+      'Clients can accept the indicative scope in-browser; CRM rows link to matching portals',
+      'Portal artifacts print the SOW and deposit invoice for that quote — still zero-config',
+    ],
+    highlightsZh: [
+      '计算器「预览客户状态页」打开 ?portal=quote，价格、范围与报价编号一致',
+      '客户可在浏览器内接受参考范围；CRM 行链到对应门户',
+      '门户交付物可打印该报价的 SOW 与定金发票 — 仍为零配置',
+    ],
+  },
+  {
     version: '2.3.0',
     date: '2026-07-16',
     product: 'stack',

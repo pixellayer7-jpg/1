@@ -22,7 +22,9 @@ How prospects move from discovery to a signed proposal.
 
 ## 4. Written proposal
 
-- Use calculator **SOW draft** or [SOW template](./SOW-TEMPLATE.md) for fixed scope, payment schedule (e.g. 50/50), revision rounds
+- **v2.5:** Share the calculator **Open proposal** URL (`?proposal=sow`) — same price/scope in-app, then **Accept** into `?portal=quote`
+- Optional client name on the calculator carries into SOW, deposit invoice, and portal
+- Fallback: calculator **SOW draft** Markdown / print HTML, or [SOW template](./SOW-TEMPLATE.md)
 - **Book a call** CTA on landing (set `VITE_BOOKING_URL` or mailto fallback)
 
 ## 5. Optional: save estimate online + CRM

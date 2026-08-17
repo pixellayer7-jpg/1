@@ -41,7 +41,8 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 - **Commercial flow doc** — `docs/COMMERCIAL-FLOW.md` (discovery → quote → handoff → SOW)
 - **FAQ** — Common client questions before contact
 - **Changelog** — Bilingual release timeline for landing / calculator / API (`#changelog`)
-- **Client status portal demo** — Product-chain link to `project-estimator/?portal=demo` for milestones, deliverables, updates, and next action
+- **Client status portal** — Calculator builds a live `?portal=quote` page (same estimate); sample demo remains at `?portal=demo`
+- **Shareable proposal** — Calculator **Open proposal** opens `?proposal=sow` (SOW + deposit invoice, accept → portal) with optional client name
 - **Contact** — Mailto-first with one-click copy email; optional Formspree/API when configured
 - **Deliverables** — Typical in/out of scope for client expectations
 - **Legal** — Privacy & terms summary (not legal advice)
