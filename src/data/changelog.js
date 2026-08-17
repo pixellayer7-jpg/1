@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.6.0',
+    date: '2026-08-17',
+    product: 'stack',
+    titleEn: 'Typed proposal acceptance + kickoff checklist',
+    titleZh: '键入接受提案 + 开工清单',
+    highlightsEn: [
+      'Proposal requires a typed name; SOW dates and payment method fill from the same quote',
+      'Client portal can mark the deposit as sent and track kickoff assets / copy / access',
+      'Signature and checklist stay in this browser — still zero-config, no payment processor',
+    ],
+    highlightsZh: [
+      '提案需键入姓名；SOW 日期与支付方式由同一报价自动填入',
+      '客户门户可标记定金已汇出，并勾选开工素材 / 文案 / 权限',
+      '签署与清单仅保存在本浏览器 — 仍为零配置，无需支付网关',
+    ],
+  },
+  {
     version: '2.5.0',
     date: '2026-08-17',
     product: 'stack',
