@@ -42,7 +42,7 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 - **FAQ** — Common client questions before contact
 - **Changelog** — Bilingual release timeline for landing / calculator / API (`#changelog`)
 - **Client status portal** — Calculator builds a live `?portal=quote` page (same estimate); sample demo remains at `?portal=demo`
-- **Shareable proposal** — Calculator **Open proposal** opens `?proposal=sow` (typed name to accept, filled dates, then portal kickoff)
+- **Shareable proposal** — Calculator **Open proposal** opens `?proposal=sow` (typed name to accept, filled dates, portal kickoff, downloadable engagement record)
 - **Contact** — Mailto-first with one-click copy email; optional Formspree/API when configured
 - **Deliverables** — Typical in/out of scope for client expectations
 - **Legal** — Privacy & terms summary (not legal advice)

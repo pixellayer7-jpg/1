@@ -22,6 +22,7 @@ How prospects move from discovery to a signed proposal.
 
 ## 4. Written proposal
 
+- **v2.7:** Download JSON/Markdown **engagement record**; CRM **This browser** card; kickoff-complete hands next action to PixelLayer
 - **v2.6:** Typed name to accept; SOW dates + payment method auto-fill; portal **Mark deposit sent** + kickoff checklist (this browser only)
 - **v2.5:** Share the calculator **Open proposal** URL (`?proposal=sow`) — same price/scope in-app, then **Accept** into `?portal=quote`
 - Optional client name on the calculator carries into SOW, deposit invoice, and portal

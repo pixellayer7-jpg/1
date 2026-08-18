@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.7.0',
+    date: '2026-08-18',
+    product: 'stack',
+    titleEn: 'Engagement record + CRM this-browser status',
+    titleZh: '合作记录 + CRM 本机状态',
+    highlightsEn: [
+      'Download JSON/Markdown engagement evidence after signing (quote, signer, deposit, kickoff)',
+      'CRM admin shows the current browser quote, stage, and download — demo data stays separate',
+      'Completing the kickoff checklist hands next action to PixelLayer — still zero-config',
+    ],
+    highlightsZh: [
+      '签署后可下载 JSON/Markdown 合作证据（报价、签署人、定金、开工）',
+      'CRM 管理显示本浏览器当前报价、阶段与下载 — 与演示数据分开',
+      '开工清单完成后，下一步交给 PixelLayer — 仍为零配置',
+    ],
+  },
+  {
     version: '2.6.0',
     date: '2026-08-17',
     product: 'stack',
