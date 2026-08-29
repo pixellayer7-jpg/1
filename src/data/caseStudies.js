@@ -71,11 +71,11 @@ export const caseStudiesEn = [
     constraint:
       'Deliver theme packaging for real WordPress hosting, plus a zero-PHP local preview so pastors can review layout before go-live.',
     delivery:
-      'Custom WordPress theme (CPT + Customizer church fields + shortcodes), Node preview/export tools, and a shareable static zip for offline review.',
+      'Custom WordPress theme (CPT + Customizer church fields + shortcodes), Node preview/export tools with zh/en switcher, and a shareable static zip for offline review.',
     metrics: [
       'WordPress theme zip',
       'Local preview (no PHP)',
-      'Static export for staff',
+      'Bilingual preview /en/',
       'Liturgical visual language',
     ],
     link: `${GITHUB_PROFILE}/rongen-church`,
@@ -137,11 +137,11 @@ export const caseStudiesZh = [
     constraint:
       '交付可上传正式 WordPress 主机的主题包，同时提供零 PHP 本机预览，方便牧师上线前审阅版面。',
     delivery:
-      '自订 WordPress 主题（自定义内容类型 + Customizer 教会资料 + 简码）、Node 预览/导出工具，以及可分享的静态 zip 供离线审阅。',
+      '自订 WordPress 主题（自定义内容类型 + Customizer 教会资料 + 简码）、Node 预览/导出工具（中/英切换），以及可分享的静态 zip 供离线审阅。',
     metrics: [
       'WordPress 主题 zip',
       '本机预览（无需 PHP）',
-      '静态导出给同工',
+      '双语预览 /en/',
       '礼仪教会视觉语言',
     ],
     link: `${GITHUB_PROFILE}/rongen-church`,
