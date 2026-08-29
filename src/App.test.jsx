@@ -89,9 +89,9 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Case studies$/ })
     ).toBeInTheDocument()
-    expect(screen.getAllByText(/^Problem$/).length).toBe(3)
-    expect(screen.getAllByText(/^Constraint$/).length).toBe(3)
-    expect(screen.getAllByText(/^Delivery$/).length).toBe(3)
+    expect(screen.getAllByText(/^Problem$/).length).toBe(4)
+    expect(screen.getAllByText(/^Constraint$/).length).toBe(4)
+    expect(screen.getAllByText(/^Delivery$/).length).toBe(4)
     expect(
       screen.getByRole('heading', { name: /^What clients say$/ })
     ).toBeInTheDocument()

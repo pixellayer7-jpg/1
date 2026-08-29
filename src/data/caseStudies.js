@@ -1,4 +1,4 @@
-import { ESTIMATOR_URL, SITE_URL } from '../config/site'
+import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
 
 /**
  * Representative engagements illustrated by live open-source demos.
@@ -62,6 +62,25 @@ export const caseStudiesEn = [
     link: ESTIMATOR_URL,
     linkLabel: 'Open calculator + CRM',
   },
+  {
+    id: 'rongen-church',
+    title: 'Parish website — WordPress theme + offline preview',
+    client: 'Lutheran church (Rongen / 榮恩堂, Tainan)',
+    problem:
+      'Needed a liturgical church site (sermons, bulletins, events) that non-technical staff can maintain — without a commercial “church SaaS” look.',
+    constraint:
+      'Deliver theme packaging for real WordPress hosting, plus a zero-PHP local preview so pastors can review layout before go-live.',
+    delivery:
+      'Custom WordPress theme (CPT + Customizer church fields + shortcodes), Node preview/export tools, and a shareable static zip for offline review.',
+    metrics: [
+      'WordPress theme zip',
+      'Local preview (no PHP)',
+      'Static export for staff',
+      'Liturgical visual language',
+    ],
+    link: `${GITHUB_PROFILE}/rongen-church`,
+    linkLabel: 'View source on GitHub',
+  },
 ]
 
 export const caseStudiesZh = [
@@ -108,5 +127,24 @@ export const caseStudiesZh = [
     ],
     link: ESTIMATOR_URL,
     linkLabel: '打开计算器与 CRM',
+  },
+  {
+    id: 'rongen-church',
+    title: '堂会官网 — WordPress 主题 + 离线预览',
+    client: '路德会堂会（台南白河 · 荣恩堂）',
+    problem:
+      '需要礼仪教会风格网站（讲道、周报、活动），非技术同工可维护，且避免商业教会 SaaS 观感。',
+    constraint:
+      '交付可上传正式 WordPress 主机的主题包，同时提供零 PHP 本机预览，方便牧师上线前审阅版面。',
+    delivery:
+      '自订 WordPress 主题（自定义内容类型 + Customizer 教会资料 + 简码）、Node 预览/导出工具，以及可分享的静态 zip 供离线审阅。',
+    metrics: [
+      'WordPress 主题 zip',
+      '本机预览（无需 PHP）',
+      '静态导出给同工',
+      '礼仪教会视觉语言',
+    ],
+    link: `${GITHUB_PROFILE}/rongen-church`,
+    linkLabel: '在 GitHub 查看源码',
   },
 ]
