@@ -40,8 +40,8 @@ export const caseStudiesEn = [
       'Reply templates',
       'Written scope docs',
     ],
-    link: '#pricing',
-    linkLabel: 'See pricing tiers',
+    link: `${ESTIMATOR_URL.replace(/\/?$/, '/')}?proposal=sow`,
+    linkLabel: 'Open shareable proposal',
   },
   {
     id: 'dashboard-ui',
@@ -59,8 +59,8 @@ export const caseStudiesEn = [
       'JSON / CSV export',
       'Schema-validated API',
     ],
-    link: ESTIMATOR_URL,
-    linkLabel: 'Open calculator + CRM',
+    link: `${ESTIMATOR_URL.replace(/\/?$/, '/')}?admin=1`,
+    linkLabel: 'Open CRM admin demo',
   },
   {
     id: 'rongen-church',
@@ -73,9 +73,9 @@ export const caseStudiesEn = [
     delivery:
       'Custom WordPress theme (CPT + Customizer church fields + shortcodes), Node preview/export tools with zh/en switcher, and a shareable static zip for offline review.',
     metrics: [
+      'Live Pages preview (zh/en)',
       'WordPress theme zip',
       'Local preview (no PHP)',
-      'Bilingual preview /en/',
       'Liturgical visual language',
     ],
     link: RONGEN_PREVIEW_URL,
@@ -107,8 +107,8 @@ export const caseStudiesZh = [
     delivery:
       '透明档位卡、修订/定金 FAQ、计算器 SOW Markdown + 可打印提案/定金发票，以及运营回复模板。',
     metrics: ['三档定价', 'SOW + 定金发票', '回复模板', '书面范围文档'],
-    link: '#pricing',
-    linkLabel: '查看价格档位',
+    link: `${ESTIMATOR_URL.replace(/\/?$/, '/')}?proposal=sow`,
+    linkLabel: '打开可分享提案',
   },
   {
     id: 'dashboard-ui',
@@ -125,8 +125,8 @@ export const caseStudiesZh = [
       'JSON / CSV 导出',
       'Schema 校验 API',
     ],
-    link: ESTIMATOR_URL,
-    linkLabel: '打开计算器与 CRM',
+    link: `${ESTIMATOR_URL.replace(/\/?$/, '/')}?admin=1`,
+    linkLabel: '打开 CRM 管理演示',
   },
   {
     id: 'rongen-church',
@@ -139,9 +139,9 @@ export const caseStudiesZh = [
     delivery:
       '自订 WordPress 主题（自定义内容类型 + Customizer 教会资料 + 简码）、Node 预览/导出工具（中/英切换），以及可分享的静态 zip 供离线审阅。',
     metrics: [
+      'Pages 在线预览（中/英）',
       'WordPress 主题 zip',
       '本机预览（无需 PHP）',
-      '双语预览 /en/',
       '礼仪教会视觉语言',
     ],
     link: RONGEN_PREVIEW_URL,

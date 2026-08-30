@@ -1,10 +1,16 @@
-import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
+import {
+  ESTIMATOR_URL,
+  GITHUB_PROFILE,
+  RONGEN_PREVIEW_URL,
+  SITE_URL,
+} from '../config/site'
 
 export default function EcosystemStrip({ lang }) {
   const isEn = lang === 'en'
   const landing = SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`
   const adminUrl = `${ESTIMATOR_URL.replace(/\/?$/, '/')}?admin=1`
   const portalUrl = `${ESTIMATOR_URL.replace(/\/?$/, '/')}?portal=demo`
+  const rongenEn = `${RONGEN_PREVIEW_URL.replace(/\/?$/, '/')}en/`
 
   return (
     <aside
@@ -43,6 +49,18 @@ export default function EcosystemStrip({ lang }) {
           rel="noopener noreferrer"
         >
           {isEn ? 'Proposal' : '提案'}
+        </a>
+        <span className="ecosystem-sep" aria-hidden="true">
+          ·
+        </span>
+        <a href={RONGEN_PREVIEW_URL} target="_blank" rel="noopener noreferrer">
+          {isEn ? 'Rongen (client)' : '荣恩堂（客户）'}
+        </a>
+        <span className="ecosystem-sep" aria-hidden="true">
+          ·
+        </span>
+        <a href={rongenEn} target="_blank" rel="noopener noreferrer">
+          {isEn ? 'Rongen EN' : '荣恩堂 EN'}
         </a>
         <span className="ecosystem-sep" aria-hidden="true">
           ·

@@ -1531,3 +1531,42 @@ button {
     color: var(--bg);
   }
 }
+
+/* Print — résumé-style portfolio dump */
+@media print {
+  .skip-link,
+  .nav-toggle,
+  .ecosystem-strip,
+  .sticky-cta,
+  .lang-switch,
+  .hero-cta,
+  .cta-band,
+  .contact-actions,
+  .contact-copy-btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: underline;
+  }
+
+  .hero,
+  .section,
+  .footer {
+    break-inside: avoid;
+  }
+
+  .hero-badges a::after,
+  .case-study-link::after,
+  .project-card a::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.75em;
+    word-break: break-all;
+  }
+}

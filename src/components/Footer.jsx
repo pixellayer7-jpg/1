@@ -1,4 +1,9 @@
-import { ESTIMATOR_URL, GITHUB_PROFILE, EMAIL } from '../config/site'
+import {
+  ESTIMATOR_URL,
+  GITHUB_PROFILE,
+  EMAIL,
+  RONGEN_PREVIEW_URL,
+} from '../config/site'
 
 export default function Footer({ lang }) {
   const isEn = lang === 'en'
@@ -27,6 +32,13 @@ export default function Footer({ lang }) {
           <a href="#privacy">{isEn ? 'Privacy' : '隐私'}</a>
           <a href={ESTIMATOR_URL} target="_blank" rel="noopener noreferrer">
             {isEn ? 'Quote tool' : '报价工具'}
+          </a>
+          <a
+            href={RONGEN_PREVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {isEn ? 'Rongen preview' : '荣恩堂预览'}
           </a>
           <a
             href={`${ESTIMATOR_URL.replace(/\/?$/, '/')}?admin=1`}

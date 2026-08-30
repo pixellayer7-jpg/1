@@ -4,7 +4,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_')
-  const siteUrl = (env.VITE_SITE_URL || '').replace(/\/+$/, '')
+  const siteUrl = (
+    env.VITE_SITE_URL || 'https://pixellayer7-jpg.github.io/1'
+  ).replace(/\/+$/, '')
 
   return {
     plugins: [

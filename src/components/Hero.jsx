@@ -1,5 +1,10 @@
 import { useState } from 'react'
-import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
+import {
+  ESTIMATOR_URL,
+  GITHUB_PROFILE,
+  RONGEN_PREVIEW_URL,
+  SITE_URL,
+} from '../config/site'
 
 export default function Hero({ lang, setLang }) {
   const isEn = lang === 'en'
@@ -28,6 +33,7 @@ export default function Hero({ lang, setLang }) {
         tertiaryCta: 'See Shipped Work',
         badgeLanding: 'Live landing',
         badgeCalc: 'Live calculator',
+        badgeClient: 'Live client site',
         badgeGithub: 'Open source',
       }
     : {
@@ -52,6 +58,7 @@ export default function Hero({ lang, setLang }) {
         tertiaryCta: '查看已交付作品',
         badgeLanding: '主站已上线',
         badgeCalc: '计算器已上线',
+        badgeClient: '客户站已上线',
         badgeGithub: '开源仓库',
       }
 
@@ -120,10 +127,15 @@ export default function Hero({ lang, setLang }) {
           >
             {t.navQuote}
           </a>
-          <div className="lang-switch">
+          <div
+            className="lang-switch"
+            role="group"
+            aria-label={isEn ? 'Language' : '语言'}
+          >
             <button
               type="button"
               className={`lang-btn ${isEn ? 'active' : ''}`}
+              aria-pressed={isEn}
               onClick={() => setLang('en')}
             >
               EN
@@ -131,6 +143,7 @@ export default function Hero({ lang, setLang }) {
             <button
               type="button"
               className={`lang-btn ${!isEn ? 'active' : ''}`}
+              aria-pressed={!isEn}
               onClick={() => setLang('zh')}
             >
               中文
@@ -162,6 +175,14 @@ export default function Hero({ lang, setLang }) {
             {t.badgeCalc}
           </a>
           <a
+            href={RONGEN_PREVIEW_URL}
+            className="hero-badge"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.badgeClient}
+          </a>
+          <a
             href={GITHUB_PROFILE}
             className="hero-badge hero-badge--muted"
             target="_blank"
@@ -182,7 +203,7 @@ export default function Hero({ lang, setLang }) {
           >
             {t.secondaryCta}
           </a>
-          <a href="#projects" className="btn btn-outline btn-outline--muted">
+          <a href="#cases" className="btn btn-outline btn-outline--muted">
             {t.tertiaryCta}
           </a>
         </div>
