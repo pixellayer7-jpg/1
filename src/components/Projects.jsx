@@ -1,4 +1,9 @@
-import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
+import {
+  ESTIMATOR_URL,
+  GITHUB_PROFILE,
+  RONGEN_PREVIEW_URL,
+  SITE_URL,
+} from '../config/site'
 
 const portfolioEn = [
   {
@@ -30,7 +35,7 @@ const portfolioEn = [
     title: 'Rongen Lutheran Church',
     desc: 'Custom WordPress theme for a parish in Tainan — sermons/bulletins/events, Customizer fields, plus Node local preview with zh/EN switcher & static export (no PHP required to review).',
     tags: ['WordPress', 'PHP', 'Node', 'CSS'],
-    demoUrl: null,
+    demoUrl: RONGEN_PREVIEW_URL,
     repoUrl: `${GITHUB_PROFILE}/rongen-church`,
   },
 ]
@@ -65,7 +70,7 @@ const portfolioZh = [
     title: '中华福音道路德会 荣恩堂',
     desc: '台南白河堂会自订 WordPress 主题：讲道/周报/活动、自订器教会资料，以及无需 PHP 的本机预览（中/英切换）与静态导出。',
     tags: ['WordPress', 'PHP', 'Node', 'CSS'],
-    demoUrl: null,
+    demoUrl: RONGEN_PREVIEW_URL,
     repoUrl: `${GITHUB_PROFILE}/rongen-church`,
   },
 ]

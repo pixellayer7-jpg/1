@@ -6,6 +6,11 @@ export const ESTIMATOR_URL =
   import.meta.env.VITE_ESTIMATOR_URL ||
   'https://pixellayer7-jpg.github.io/project-estimator/'
 
+/** Rongen church static bilingual preview (GitHub Pages) */
+export const RONGEN_PREVIEW_URL =
+  import.meta.env.VITE_RONGEN_PREVIEW_URL ||
+  'https://pixellayer7-jpg.github.io/rongen-church/'
+
 export const GITHUB_PROFILE = 'https://github.com/pixellayer7-jpg'
 export const EMAIL = 'pixellayer7@gmail.com'
 

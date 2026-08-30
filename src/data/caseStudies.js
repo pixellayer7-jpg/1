@@ -1,4 +1,4 @@
-import { ESTIMATOR_URL, GITHUB_PROFILE, SITE_URL } from '../config/site'
+import { ESTIMATOR_URL, RONGEN_PREVIEW_URL, SITE_URL } from '../config/site'
 
 /**
  * Representative engagements illustrated by live open-source demos.
@@ -78,8 +78,8 @@ export const caseStudiesEn = [
       'Bilingual preview /en/',
       'Liturgical visual language',
     ],
-    link: `${GITHUB_PROFILE}/rongen-church`,
-    linkLabel: 'View source on GitHub',
+    link: RONGEN_PREVIEW_URL,
+    linkLabel: 'Open live preview',
   },
 ]
 
@@ -144,7 +144,7 @@ export const caseStudiesZh = [
       '双语预览 /en/',
       '礼仪教会视觉语言',
     ],
-    link: `${GITHUB_PROFILE}/rongen-church`,
-    linkLabel: '在 GitHub 查看源码',
+    link: RONGEN_PREVIEW_URL,
+    linkLabel: '打开在线预览',
   },
 ]
