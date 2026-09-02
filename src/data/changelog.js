@@ -4,6 +4,25 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.14',
+    date: '2026-09-01',
+    product: 'landing',
+    titleEn: 'Client site spotlight + interview-ready polish',
+    titleZh: '客户站露出 + 面试走查打磨',
+    highlightsEn: [
+      'Hero badges call out the live Rongen church preview alongside landing and calculator demos',
+      'Ecosystem strip, footer, and case studies deep-link to Rongen (zh/en), proposal (?proposal=sow), and CRM (?admin=1)',
+      'Print stylesheet and Open Graph meta (site URL fallback) for walkthroughs and link previews',
+      'Language toggle uses aria-pressed for clearer screen-reader state',
+    ],
+    highlightsZh: [
+      '首屏徽章展示荣恩堂客户站在线预览，与主站、计算器并列',
+      '产品链、页脚与案例研究深链荣恩堂（中/EN）、提案（?proposal=sow）与 CRM（?admin=1）',
+      '打印样式与 Open Graph 元数据（站点 URL 回退），方便面试走查与链接预览',
+      '语言切换增加 aria-pressed，读屏状态更清晰',
+    ],
+  },
+  {
     version: '2.7.0',
     date: '2026-08-18',
     product: 'stack',
