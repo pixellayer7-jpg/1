@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.15',
+    date: '2026-09-03',
+    product: 'landing',
+    titleEn: 'Public 5-minute walkthrough section',
+    titleZh: '公开 5 分钟走查引导区',
+    highlightsEn: [
+      'New #walkthrough section: landing → calculator → proposal → CRM → Rongen',
+      'Nav, footer, and ecosystem strip link to the guided demo path',
+      'Zero-config path — no Formspree or API secrets required',
+    ],
+    highlightsZh: [
+      '新增 #walkthrough：主站 → 计算器 → 提案 → CRM → 荣恩堂',
+      '导航、页脚与产品链入口链到引导走查',
+      '零配置路径 — 无需 Formspree 或 API 密钥',
+    ],
+  },
+  {
     version: '2.1.14',
     date: '2026-09-01',
     product: 'landing',

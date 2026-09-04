@@ -7,6 +7,7 @@ import TechStack from './components/TechStack'
 import Process from './components/Process'
 import Faq from './components/Faq'
 import Changelog from './components/Changelog'
+import Walkthrough from './components/Walkthrough'
 import PricingPreview from './components/PricingPreview'
 import ClientTypes from './components/ClientTypes'
 import CtaBand from './components/CtaBand'
@@ -74,6 +75,7 @@ export default function App() {
         <Testimonials lang={lang} />
         <TechStack lang={lang} />
         <Process lang={lang} />
+        <Walkthrough lang={lang} />
         <About lang={lang} />
         <Deliverables lang={lang} />
         <Faq lang={lang} />

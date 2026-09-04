@@ -43,12 +43,41 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Changelog$/ })
     ).toBeInTheDocument()
-    expect(screen.getByText(/^v2\.1\.14$/)).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.1\.15$/)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /Client site spotlight/,
+        name: /Public 5-minute walkthrough/,
       })
     ).toBeInTheDocument()
+  })
+
+  it('renders interview walkthrough section', () => {
+    render(<App />)
+    const section = document.getElementById('walkthrough')
+    expect(section).toBeTruthy()
+    expect(
+      within(section).getByRole('heading', {
+        name: /^5-minute interview walkthrough$/,
+      })
+    ).toBeInTheDocument()
+    expect(
+      within(section).getByRole('link', { name: /Open calculator/ })
+    ).toHaveAttribute(
+      'href',
+      'https://pixellayer7-jpg.github.io/project-estimator/'
+    )
+    expect(
+      within(section).getByRole('link', { name: /Open proposal/ })
+    ).toHaveAttribute(
+      'href',
+      'https://pixellayer7-jpg.github.io/project-estimator/?proposal=sow'
+    )
+    expect(
+      within(section).getByRole('link', { name: /Open CRM admin/ })
+    ).toHaveAttribute(
+      'href',
+      'https://pixellayer7-jpg.github.io/project-estimator/?admin=1'
+    )
   })
 
   it('renders About section', () => {

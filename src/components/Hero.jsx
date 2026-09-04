@@ -106,6 +106,9 @@ export default function Hero({ lang, setLang }) {
           <a href="#process" onClick={closeNav}>
             {t.navProcess}
           </a>
+          <a href="#walkthrough" onClick={closeNav}>
+            {isEn ? 'Walkthrough' : '走查'}
+          </a>
           <a href="#about" onClick={closeNav}>
             {t.navAbout}
           </a>
