@@ -4,6 +4,57 @@
  */
 export const changelogEntries = [
   {
+    version: '2.7.1',
+    date: '2026-09-04',
+    product: 'calculator',
+    titleEn: 'Ecosystem links to Rongen + walkthrough',
+    titleZh: '产品链链到荣恩堂与走查',
+    highlightsEn: [
+      'Calculator ecosystem strip links Rongen (zh/EN) and landing #walkthrough',
+      'Footer cross-link to the live client church preview',
+      'Still zero-config — no API secrets required for the interview path',
+    ],
+    highlightsZh: [
+      '计算器产品链条带链到荣恩堂（中/EN）与主站 #walkthrough',
+      '页脚增加客户堂会预览交叉链接',
+      '仍为零配置 — 面试走查不需要 API 密钥',
+    ],
+  },
+  {
+    version: '1.2.3',
+    date: '2026-09-04',
+    product: 'stack',
+    titleEn: 'Rongen print stylesheet for pastor review',
+    titleZh: '荣恩堂打印样式供牧师审阅',
+    highlightsEn: [
+      'Print CSS hides menus, maps, and video; keeps brand and contact details',
+      'On-screen print hint (Ctrl/⌘+P) on the bilingual Pages preview',
+      'Theme CSS shared by WordPress and the zero-PHP preview export',
+    ],
+    highlightsZh: [
+      '打印样式隐藏选单、地图与影片，保留品牌与联系信息',
+      '双语 Pages 预览页提示 Ctrl/⌘+P 可打印审阅',
+      '主题 CSS 同时用于 WordPress 与零 PHP 预览导出',
+    ],
+  },
+  {
+    version: '1.1.1',
+    date: '2026-09-08',
+    product: 'api',
+    titleEn: 'API docs: leads, PATCH, stats, OpenAPI',
+    titleZh: 'API 文档：线索、PATCH、统计、OpenAPI',
+    highlightsEn: [
+      'README endpoint table matches live routes (quotes, leads, stats, openapi.json)',
+      'Documents Bearer auth for list/PATCH and public quote share by UUID',
+      'Curl examples for leads lifecycle and status updates',
+    ],
+    highlightsZh: [
+      'README 端点表与现网路由一致（报价、线索、统计、openapi.json）',
+      '说明列表/PATCH 的 Bearer 鉴权，以及按 UUID 公开分享报价',
+      '补充线索生命周期与状态更新的 curl 示例',
+    ],
+  },
+  {
     version: '2.1.15',
     date: '2026-09-03',
     product: 'landing',
