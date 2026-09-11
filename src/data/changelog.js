@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.7.2',
+    date: '2026-09-11',
+    product: 'calculator',
+    titleEn: 'Social og:image for the quote calculator',
+    titleZh: '报价计算器社交分享预览图',
+    highlightsEn: [
+      '1200×630 og-image.svg for LinkedIn / X link previews',
+      'Build injects og:image, twitter:summary_large_image, and canonical URL',
+      'Default site URL fallback matches GitHub Pages demo',
+    ],
+    highlightsZh: [
+      '1200×630 og-image.svg，方便 LinkedIn / X 链接预览',
+      '构建注入 og:image、twitter:summary_large_image 与 canonical',
+      '默认站点 URL 回退对齐 GitHub Pages 演示',
+    ],
+  },
+  {
     version: '2.7.1',
     date: '2026-09-04',
     product: 'calculator',
