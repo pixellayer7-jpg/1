@@ -43,10 +43,10 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Changelog$/ })
     ).toBeInTheDocument()
-    expect(screen.getByText(/^v2\.7\.2$/)).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.1\.16$/)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /Social og:image for the quote calculator/,
+        name: /Copy walkthrough path/,
       })
     ).toBeInTheDocument()
   })
@@ -59,6 +59,9 @@ describe('App', () => {
       within(section).getByRole('heading', {
         name: /^5-minute interview walkthrough$/,
       })
+    ).toBeInTheDocument()
+    expect(
+      within(section).getByRole('button', { name: /Copy full path/ })
     ).toBeInTheDocument()
     expect(
       within(section).getByRole('link', { name: /Open calculator/ })

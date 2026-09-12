@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.16',
+    date: '2026-09-12',
+    product: 'landing',
+    titleEn: 'Copy walkthrough path + changelog tip',
+    titleZh: '复制走查路径 + Changelog 引导',
+    highlightsEn: [
+      'Walkthrough section: one-click copy of the full demo URL path for interview emails',
+      'Changelog tip points newcomers to #walkthrough before reading releases',
+    ],
+    highlightsZh: [
+      '走查区一键复制完整演示路径，方便发面试邮件',
+      'Changelog 顶部引导先看 #walkthrough 再浏览版本',
+    ],
+  },
+  {
     version: '2.7.2',
     date: '2026-09-11',
     product: 'calculator',

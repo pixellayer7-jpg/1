@@ -88,3 +88,27 @@ export const walkthroughMeta = {
   noteEn: 'No Formspree or API secrets required for this path.',
   noteZh: '整条路径不需要 Formspree 或 API 密钥。',
 }
+
+/** Plain-text path for clipboard / interview email. */
+export function buildWalkthroughPathText(lang = 'en') {
+  const isEn = lang === 'en'
+  const header = isEn
+    ? 'PixelLayer interview walkthrough (~5 min, zero secrets)'
+    : 'PixelLayer 面试走查（约 5 分钟，零密钥）'
+  const lines = walkthroughSteps.map((s) => {
+    const title = isEn ? s.titleEn : s.titleZh
+    let url = s.href
+    if (url.startsWith('#')) {
+      url = `${landing.replace(/\/?$/, '/')}${url}`
+    }
+    const secondary =
+      s.secondaryHref &&
+      ` (${isEn ? s.secondaryCtaEn : s.secondaryCtaZh}: ${s.secondaryHref})`
+    return `${s.n}. ${title}\n   ${url}${secondary || ''}`
+  })
+  const foot = isEn
+    ? `Start: ${landing.replace(/\/?$/, '/')}#walkthrough`
+    : `入口：${landing.replace(/\/?$/, '/')}#walkthrough`
+  return [header, '', ...lines, '', foot].join('\n')
+}
+

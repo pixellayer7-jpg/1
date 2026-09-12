@@ -7,6 +7,10 @@ export default function Changelog({ lang }) {
   const subtitle = isEn
     ? 'How the PixelLayer stack evolved — landing, calculator, and API.'
     : 'PixelLayer 产品链如何演进 — 主站、计算器与 API。'
+  const tip = isEn
+    ? 'New here? Start with the 5-minute interview walkthrough, then skim recent releases below.'
+    : '第一次看？先走 5 分钟面试走查，再浏览下方最近版本。'
+  const tipCta = isEn ? 'Open walkthrough' : '打开走查'
   const reposNote = isEn
     ? 'Full commit history lives on GitHub.'
     : '完整提交历史见 GitHub。'
@@ -16,6 +20,10 @@ export default function Changelog({ lang }) {
       <div className="container">
         <h2 className="section-title">{title}</h2>
         <p className="section-subtitle">{subtitle}</p>
+        <p className="changelog-tip">
+          {tip}{' '}
+          <a href="#walkthrough">{tipCta} →</a>
+        </p>
         <ol className="changelog-timeline">
           {changelogEntries.map((entry) => {
             const label = productLabels[entry.product]

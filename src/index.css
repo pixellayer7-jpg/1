@@ -1120,10 +1120,47 @@ button {
   color: var(--text-muted);
 }
 
+.walkthrough-toolbar {
+  margin: 0 0 1.25rem;
+}
+
+.walkthrough-copy-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.walkthrough-copy-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .walkthrough-note {
   margin-top: 1.25rem;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.changelog-tip {
+  margin: 0 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 720px;
+}
+
+.changelog-tip a {
+  font-weight: 600;
 }
 
 /* About */
