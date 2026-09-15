@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.7.3',
+    date: '2026-09-15',
+    product: 'calculator',
+    titleEn: 'In-app changelog on the quote calculator',
+    titleZh: '报价计算器站内更新日志',
+    highlightsEn: [
+      'Calculator #changelog bilingual timeline (proposal → portal → CRM)',
+      'Ecosystem strip and footer link to recent calculator releases',
+      'Tips point to landing #walkthrough and API demo:curl',
+    ],
+    highlightsZh: [
+      '计算器 #changelog 中英时间线（提案 → 门户 → CRM）',
+      '产品链条带与页脚链到计算器近期版本',
+      '引导主站 #walkthrough 与 API demo:curl',
+    ],
+  },
+  {
     version: '2.1.16',
     date: '2026-09-12',
     product: 'landing',
