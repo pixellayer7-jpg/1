@@ -4,6 +4,36 @@
  */
 export const changelogEntries = [
   {
+    version: '1.1.2',
+    date: '2026-09-16',
+    product: 'api',
+    titleEn: 'Richer OpenAPI with request examples',
+    titleZh: '更完整的 OpenAPI 与请求示例',
+    highlightsEn: [
+      '/api/v1/openapi.json now includes schemas, examples, Bearer security, tags, and servers',
+      'Interview-ready QuoteCreate / LeadCreate / PATCH status samples',
+    ],
+    highlightsZh: [
+      '/api/v1/openapi.json 含 schemas、示例、Bearer、tags 与 servers',
+      '面试可用的 QuoteCreate / LeadCreate / PATCH 状态示例',
+    ],
+  },
+  {
+    version: '1.2.4',
+    date: '2026-09-16',
+    product: 'stack',
+    titleEn: 'Rongen README: print + og:image in English summary',
+    titleZh: '荣恩堂 README：英文摘要补 print / og',
+    highlightsEn: [
+      'English portfolio blurb documents print-for-pastor-review and social og-image',
+      'Chinese header also links the live og-image.png',
+    ],
+    highlightsZh: [
+      '英文作品集摘要写明打印审阅与社交 og-image',
+      '中文页首也链到线上 og-image.png',
+    ],
+  },
+  {
     version: '2.7.3',
     date: '2026-09-15',
     product: 'calculator',
@@ -16,7 +46,7 @@ export const changelogEntries = [
     ],
     highlightsZh: [
       '计算器 #changelog 中英时间线（提案 → 门户 → CRM）',
-      '产品链条带与页脚链到计算器近期版本',
+      '产品链、页脚链到计算器近期版本',
       '引导主站 #walkthrough 与 API demo:curl',
     ],
   },
