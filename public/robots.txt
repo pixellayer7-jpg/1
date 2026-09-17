@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Primary entry + crawlable section deep links (?section=)
+# See public/sitemap.xml — walkthrough, changelog, cases, pricing, contact
+
 Sitemap: https://pixellayer7-jpg.github.io/1/sitemap.xml

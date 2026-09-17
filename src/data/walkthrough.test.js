@@ -6,7 +6,7 @@ describe('buildWalkthroughPathText', () => {
     const text = buildWalkthroughPathText('en')
     expect(text).toMatch(/PixelLayer interview walkthrough/)
     expect(text).toContain(
-      'https://pixellayer7-jpg.github.io/1/#walkthrough'
+      'https://pixellayer7-jpg.github.io/1/?section=walkthrough'
     )
     expect(text).toContain(
       'https://pixellayer7-jpg.github.io/project-estimator/'

@@ -43,10 +43,10 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Changelog$/ })
     ).toBeInTheDocument()
-    expect(screen.getByText(/^v1\.1\.2$/)).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.1\.17$/)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /Richer OpenAPI/,
+        name: /Sitemap deep links/,
       })
     ).toBeInTheDocument()
   })

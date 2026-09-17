@@ -107,8 +107,8 @@ export function buildWalkthroughPathText(lang = 'en') {
     return `${s.n}. ${title}\n   ${url}${secondary || ''}`
   })
   const foot = isEn
-    ? `Start: ${landing.replace(/\/?$/, '/')}#walkthrough`
-    : `入口：${landing.replace(/\/?$/, '/')}#walkthrough`
+    ? `Start: ${landing.replace(/\/?$/, '/')}?section=walkthrough`
+    : `入口：${landing.replace(/\/?$/, '/')}?section=walkthrough`
   return [header, '', ...lines, '', foot].join('\n')
 }
 

@@ -21,6 +21,7 @@ import Testimonials from './components/Testimonials'
 import CaseStudies from './components/CaseStudies'
 import TrustBar from './components/TrustBar'
 import EcosystemStrip from './components/EcosystemStrip'
+import { scrollToLandingSectionFromLocation } from './utils/landingSection'
 
 const LANG_KEY = 'pixelayer-landing-lang'
 
@@ -50,6 +51,13 @@ export default function App() {
         ? 'PixelLayer L.L.C — 前端与 Web 开发'
         : 'PixelLayer L.L.C — Frontend & Web Development'
   }, [lang])
+
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      scrollToLandingSectionFromLocation()
+    }, 0)
+    return () => window.clearTimeout(t)
+  }, [])
 
   const skipMain = lang === 'en' ? 'Skip to content' : '跳到正文'
   const skipContact = lang === 'en' ? 'Skip to contact' : '跳到联系'

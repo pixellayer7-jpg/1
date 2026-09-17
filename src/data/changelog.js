@@ -4,6 +4,23 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.17',
+    date: '2026-09-17',
+    product: 'landing',
+    titleEn: 'Sitemap deep links via ?section=',
+    titleZh: 'Sitemap 深链支持 ?section=',
+    highlightsEn: [
+      'sitemap.xml lists walkthrough, changelog, cases, pricing, contact (and lang variants)',
+      'Opening ?section=<id> scrolls to that block — crawler-friendly vs hash-only URLs',
+      'robots.txt notes the section deep-link pattern',
+    ],
+    highlightsZh: [
+      'sitemap.xml 列出 walkthrough、changelog、cases、pricing、contact（含语言变体）',
+      '打开 ?section=<id> 会滚到对应区块 — 比纯 hash 更利于收录',
+      'robots.txt 注明 section 深链用法',
+    ],
+  },
+  {
     version: '1.1.2',
     date: '2026-09-16',
     product: 'api',
