@@ -41,7 +41,7 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 - **Commercial flow doc** — `docs/COMMERCIAL-FLOW.md` (discovery → quote → handoff → SOW)
 - **FAQ** — Common client questions before contact
 - **Changelog** — Bilingual release timeline for landing / calculator / API (`#changelog`)
-- **Interview walkthrough** — 5-minute demo path: landing → calculator → proposal → CRM → Rongen (`#walkthrough` or `?section=walkthrough`)
+- **Interview walkthrough** — 5-minute demo path: landing → calculator → proposal → CRM → Rongen (`#walkthrough` or `?section=walkthrough`); links the [interview one-pager](https://github.com/pixellayer7-jpg/pixellayer7-jpg/blob/main/INTERVIEW-DEMO.md)
 - **SEO** — `robots.txt` + `sitemap.xml` with lang variants and crawlable `?section=` deep links
 - **Client status portal** — Calculator builds a live `?portal=quote` page (same estimate); sample demo remains at `?portal=demo`
 - **Shareable proposal** — Calculator **Open proposal** opens `?proposal=sow` (typed name to accept, filled dates, portal kickoff, downloadable engagement record)

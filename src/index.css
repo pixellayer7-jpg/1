@@ -1121,7 +1121,22 @@ button {
 }
 
 .walkthrough-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
   margin: 0 0 1.25rem;
+}
+
+.walkthrough-onepager {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.walkthrough-onepager:hover {
+  text-decoration: underline;
 }
 
 .walkthrough-copy-btn {

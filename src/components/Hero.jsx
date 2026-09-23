@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {
   ESTIMATOR_URL,
   GITHUB_PROFILE,
+  INTERVIEW_DEMO_URL,
   RONGEN_PREVIEW_URL,
   SITE_URL,
 } from '../config/site'
@@ -35,6 +36,7 @@ export default function Hero({ lang, setLang }) {
         badgeCalc: 'Live calculator',
         badgeClient: 'Live client site',
         badgeGithub: 'Open source',
+        badgeInterview: 'Interview one-pager',
       }
     : {
         navServices: '服务内容',
@@ -60,6 +62,7 @@ export default function Hero({ lang, setLang }) {
         badgeCalc: '计算器已上线',
         badgeClient: '客户站已上线',
         badgeGithub: '开源仓库',
+        badgeInterview: '面试一页纸',
       }
 
   function closeNav() {
@@ -192,6 +195,14 @@ export default function Hero({ lang, setLang }) {
             rel="noopener noreferrer"
           >
             {t.badgeGithub}
+          </a>
+          <a
+            href={INTERVIEW_DEMO_URL}
+            className="hero-badge hero-badge--muted"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.badgeInterview}
           </a>
         </div>
         <div className="hero-cta">

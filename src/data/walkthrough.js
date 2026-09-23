@@ -1,8 +1,4 @@
-import {
-  ESTIMATOR_URL,
-  RONGEN_PREVIEW_URL,
-  SITE_URL,
-} from '../config/site'
+import { ESTIMATOR_URL, RONGEN_PREVIEW_URL, SITE_URL } from '../config/site'
 
 const calcBase = ESTIMATOR_URL.replace(/\/?$/, '/')
 const landing = SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`
@@ -32,8 +28,7 @@ export const walkthroughSteps = [
     titleZh: '报价计算器',
     descEn:
       'Adjust scope, save a quote ID, and optionally hand off into contact with the same reference.',
-    descZh:
-      '调整范围、保存报价编号，可选把同一编号交接回主站联系表单。',
+    descZh: '调整范围、保存报价编号，可选把同一编号交接回主站联系表单。',
     ctaEn: 'Open calculator',
     ctaZh: '打开计算器',
     href: ESTIMATOR_URL,
@@ -111,4 +106,3 @@ export function buildWalkthroughPathText(lang = 'en') {
     : `入口：${landing.replace(/\/?$/, '/')}?section=walkthrough`
   return [header, '', ...lines, '', foot].join('\n')
 }
-

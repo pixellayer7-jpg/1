@@ -4,6 +4,36 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.18',
+    date: '2026-09-23',
+    product: 'landing',
+    titleEn: 'Interview one-pager on hero, walkthrough, footer',
+    titleZh: '首屏 / 走查 / 页脚链到面试一页纸',
+    highlightsEn: [
+      'Hero badge, walkthrough toolbar + note, and footer link to INTERVIEW-DEMO.md',
+      'Same zero-config script used for frontend 5 min + API demo:curl',
+    ],
+    highlightsZh: [
+      '首屏徽章、走查工具栏与备注、页脚链到 INTERVIEW-DEMO.md',
+      '与前端 5 分钟 + API demo:curl 同一套零配置脚本',
+    ],
+  },
+  {
+    version: '1.1.3',
+    date: '2026-09-23',
+    product: 'api',
+    titleEn: 'Static OpenAPI export in docs/',
+    titleZh: 'docs/ 静态导出 OpenAPI',
+    highlightsEn: [
+      'Committed docs/openapi.json — open in GitHub without starting the API',
+      'npm run docs:openapi regenerates from the same buildOpenApiDocument as /api/v1/openapi.json',
+    ],
+    highlightsZh: [
+      '提交 docs/openapi.json — 无需起 API 即可在 GitHub 打开',
+      'npm run docs:openapi 与线上 /api/v1/openapi.json 同源生成',
+    ],
+  },
+  {
     version: '2.1.17',
     date: '2026-09-17',
     product: 'landing',

@@ -13,9 +13,7 @@ describe('buildWalkthroughPathText', () => {
     )
     expect(text).toContain('?proposal=sow')
     expect(text).toContain('?admin=1')
-    expect(text).toContain(
-      'https://pixellayer7-jpg.github.io/rongen-church/'
-    )
+    expect(text).toContain('https://pixellayer7-jpg.github.io/rongen-church/')
   })
 
   it('uses Chinese labels when lang is zh', () => {

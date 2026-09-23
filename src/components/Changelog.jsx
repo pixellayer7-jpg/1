@@ -21,8 +21,7 @@ export default function Changelog({ lang }) {
         <h2 className="section-title">{title}</h2>
         <p className="section-subtitle">{subtitle}</p>
         <p className="changelog-tip">
-          {tip}{' '}
-          <a href="#walkthrough">{tipCta} →</a>
+          {tip} <a href="#walkthrough">{tipCta} →</a>
         </p>
         <ol className="changelog-timeline">
           {changelogEntries.map((entry) => {

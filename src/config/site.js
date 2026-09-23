@@ -12,6 +12,11 @@ export const RONGEN_PREVIEW_URL =
   'https://pixellayer7-jpg.github.io/rongen-church/'
 
 export const GITHUB_PROFILE = 'https://github.com/pixellayer7-jpg'
+
+/** Profile-repo interview one-pager (frontend 5 min + API demo:curl) */
+export const INTERVIEW_DEMO_URL =
+  'https://github.com/pixellayer7-jpg/pixellayer7-jpg/blob/main/INTERVIEW-DEMO.md'
+
 export const EMAIL = 'pixellayer7@gmail.com'
 
 export const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_FORM_ID || ''

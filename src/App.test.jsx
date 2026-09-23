@@ -43,10 +43,10 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Changelog$/ })
     ).toBeInTheDocument()
-    expect(screen.getByText(/^v2\.1\.17$/)).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.1\.18$/)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /Sitemap deep links/,
+        name: /Interview one-pager/,
       })
     ).toBeInTheDocument()
   })
@@ -63,6 +63,12 @@ describe('App', () => {
     expect(
       within(section).getByRole('button', { name: /Copy full path/ })
     ).toBeInTheDocument()
+    expect(
+      within(section).getByRole('link', { name: /Interview one-pager/ })
+    ).toHaveAttribute(
+      'href',
+      'https://github.com/pixellayer7-jpg/pixellayer7-jpg/blob/main/INTERVIEW-DEMO.md'
+    )
     expect(
       within(section).getByRole('link', { name: /Open calculator/ })
     ).toHaveAttribute(

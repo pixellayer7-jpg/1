@@ -4,6 +4,7 @@ import {
   walkthroughMeta,
   buildWalkthroughPathText,
 } from '../data/walkthrough'
+import { INTERVIEW_DEMO_URL } from '../config/site'
 import { copyTextToClipboard } from '../utils/copyEmail'
 
 export default function Walkthrough({ lang }) {
@@ -15,6 +16,7 @@ export default function Walkthrough({ lang }) {
     : '主站 → 计算器 → 提案 → CRM → 客户站。按顺序点开即可。'
   const copyLabel = isEn ? 'Copy full path' : '复制整条路径'
   const copiedLabel = isEn ? 'Copied' : '已复制'
+  const onePagerLabel = isEn ? 'Interview one-pager' : '面试一页纸'
 
   async function handleCopy() {
     const ok = await copyTextToClipboard(buildWalkthroughPathText(lang))
@@ -36,6 +38,14 @@ export default function Walkthrough({ lang }) {
           >
             {copied ? copiedLabel : copyLabel}
           </button>
+          <a
+            href={INTERVIEW_DEMO_URL}
+            className="walkthrough-onepager"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {onePagerLabel} →
+          </a>
         </div>
         <ol className="walkthrough-steps">
           {walkthroughSteps.map((s) => (
@@ -72,7 +82,16 @@ export default function Walkthrough({ lang }) {
           ))}
         </ol>
         <p className="walkthrough-note">
-          {isEn ? walkthroughMeta.noteEn : walkthroughMeta.noteZh}
+          {isEn ? walkthroughMeta.noteEn : walkthroughMeta.noteZh}{' '}
+          <a
+            href={INTERVIEW_DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {isEn
+              ? 'Full script (frontend + API curl).'
+              : '完整脚本（前端 + API curl）。'}
+          </a>
         </p>
       </div>
     </section>

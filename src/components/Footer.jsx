@@ -1,6 +1,7 @@
 import {
   ESTIMATOR_URL,
   GITHUB_PROFILE,
+  INTERVIEW_DEMO_URL,
   EMAIL,
   RONGEN_PREVIEW_URL,
 } from '../config/site'
@@ -26,6 +27,13 @@ export default function Footer({ lang }) {
           <a href="#projects">{isEn ? 'Work' : '作品'}</a>
           <a href="#process">{isEn ? 'Process' : '流程'}</a>
           <a href="#walkthrough">{isEn ? 'Walkthrough' : '走查'}</a>
+          <a
+            href={INTERVIEW_DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {isEn ? 'Interview one-pager' : '面试一页纸'}
+          </a>
           <a href="#deliverables">{isEn ? 'Scope' : '交付范围'}</a>
           <a href="#faq">{isEn ? 'FAQ' : '常见问题'}</a>
           <a href="#changelog">{isEn ? 'Changelog' : '更新日志'}</a>
