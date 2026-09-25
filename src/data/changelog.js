@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.7.5',
+    date: '2026-09-25',
+    product: 'calculator',
+    titleEn: 'Calculator ?section= deep links',
+    titleZh: '计算器支持 ?section= 深链',
+    highlightsEn: [
+      '?section=changelog|contact|calc|pricing scrolls like the marketing site',
+      'Expanded sitemap.xml + robots.txt note for crawlable section URLs',
+    ],
+    highlightsZh: [
+      '?section=changelog|contact|calc|pricing 与主站同样可滚动定位',
+      '扩展 sitemap.xml 与 robots.txt 便于收录 section URL',
+    ],
+  },
+  {
     version: '2.1.18',
     date: '2026-09-23',
     product: 'landing',
