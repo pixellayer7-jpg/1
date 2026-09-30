@@ -14,6 +14,12 @@ describe('buildWalkthroughPathText', () => {
     expect(text).toContain('?proposal=sow')
     expect(text).toContain('?admin=1')
     expect(text).toContain('https://pixellayer7-jpg.github.io/rongen-church/')
+    expect(text).toContain(
+      'https://github.com/pixellayer7-jpg/pixellayer7-jpg/blob/main/INTERVIEW-DEMO.md'
+    )
+    expect(text).toContain(
+      'https://github.com/pixellayer7-jpg/estimator-api/blob/main/docs/openapi.json'
+    )
   })
 
   it('uses Chinese labels when lang is zh', () => {
@@ -21,5 +27,7 @@ describe('buildWalkthroughPathText', () => {
     expect(text).toMatch(/面试走查/)
     expect(text).toContain('营销主站')
     expect(text).toContain('报价计算器')
+    expect(text).toContain('面试一页纸')
+    expect(text).toContain('API 规格')
   })
 })

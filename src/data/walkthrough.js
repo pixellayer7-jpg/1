@@ -1,4 +1,10 @@
-import { ESTIMATOR_URL, RONGEN_PREVIEW_URL, SITE_URL } from '../config/site'
+import {
+  ESTIMATOR_URL,
+  INTERVIEW_DEMO_URL,
+  OPENAPI_DOC_URL,
+  RONGEN_PREVIEW_URL,
+  SITE_URL,
+} from '../config/site'
 
 const calcBase = ESTIMATOR_URL.replace(/\/?$/, '/')
 const landing = SITE_URL.endsWith('/') ? SITE_URL : `${SITE_URL}/`
@@ -101,8 +107,17 @@ export function buildWalkthroughPathText(lang = 'en') {
       ` (${isEn ? s.secondaryCtaEn : s.secondaryCtaZh}: ${s.secondaryHref})`
     return `${s.n}. ${title}\n   ${url}${secondary || ''}`
   })
+  const start = `${landing.replace(/\/?$/, '/')}?section=walkthrough`
   const foot = isEn
-    ? `Start: ${landing.replace(/\/?$/, '/')}?section=walkthrough`
-    : `入口：${landing.replace(/\/?$/, '/')}?section=walkthrough`
-  return [header, '', ...lines, '', foot].join('\n')
+    ? [
+        `Start: ${start}`,
+        `Interview one-pager (frontend + API curl): ${INTERVIEW_DEMO_URL}`,
+        `API spec (OpenAPI, no server needed): ${OPENAPI_DOC_URL}`,
+      ]
+    : [
+        `入口：${start}`,
+        `面试一页纸（前端 + API curl）：${INTERVIEW_DEMO_URL}`,
+        `API 规格（OpenAPI，无需起服务）：${OPENAPI_DOC_URL}`,
+      ]
+  return [header, '', ...lines, '', ...foot].join('\n')
 }

@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.19',
+    date: '2026-09-29',
+    product: 'landing',
+    titleEn: 'Copied walkthrough path includes one-pager + API spec',
+    titleZh: '复制的走查路径附带一页纸与 API 规格',
+    highlightsEn: [
+      'Copy full path now appends the interview one-pager and static OpenAPI links',
+      'One paste gives interviewers the frontend demo, API script, and spec',
+    ],
+    highlightsZh: [
+      '「复制整条路径」末尾附上面试一页纸与静态 OpenAPI 链接',
+      '粘贴一次即可给面试官前端演示、API 脚本与接口规格',
+    ],
+  },
+  {
     version: '2.7.5',
     date: '2026-09-25',
     product: 'calculator',

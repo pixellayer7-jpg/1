@@ -43,10 +43,10 @@ describe('App', () => {
     expect(
       screen.getByRole('heading', { name: /^Changelog$/ })
     ).toBeInTheDocument()
-    expect(screen.getByText(/^v2\.7\.5$/)).toBeInTheDocument()
+    expect(screen.getByText(/^v2\.1\.19$/)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {
-        name: /Calculator \?section=/,
+        name: /Copied walkthrough path includes one-pager/,
       })
     ).toBeInTheDocument()
   })

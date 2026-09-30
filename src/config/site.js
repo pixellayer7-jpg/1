@@ -17,6 +17,10 @@ export const GITHUB_PROFILE = 'https://github.com/pixellayer7-jpg'
 export const INTERVIEW_DEMO_URL =
   'https://github.com/pixellayer7-jpg/pixellayer7-jpg/blob/main/INTERVIEW-DEMO.md'
 
+/** Committed static OpenAPI spec for estimator-api (readable without running the API) */
+export const OPENAPI_DOC_URL =
+  'https://github.com/pixellayer7-jpg/estimator-api/blob/main/docs/openapi.json'
+
 export const EMAIL = 'pixellayer7@gmail.com'
 
 export const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_FORM_ID || ''
