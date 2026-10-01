@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.7.6',
+    date: '2026-10-01',
+    product: 'calculator',
+    titleEn: 'Calculator toolchain: Vite 8, Vitest 5, ESLint 10',
+    titleZh: '计算器工具链：Vite 8、Vitest 5、ESLint 10',
+    highlightsEn: [
+      'Major dev-tooling upgrade with all 117 tests passing unchanged; npm audit clean',
+      'CI moves to Node 22 (Node 20 is end-of-life)',
+    ],
+    highlightsZh: [
+      '开发工具链大版本升级，117 项测试无需改动全部通过；npm audit 零漏洞',
+      'CI 升到 Node 22（Node 20 已停止维护）',
+    ],
+  },
+  {
     version: '2.1.19',
     date: '2026-09-29',
     product: 'landing',
