@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.20',
+    date: '2026-10-02',
+    product: 'landing',
+    titleEn: 'Landing toolchain: Vite 8, Vitest 5',
+    titleZh: '主站工具链：Vite 8、Vitest 5',
+    highlightsEn: [
+      'Vite 8 + plugin-react 6, Vitest 5 + jsdom 29; all 24 tests pass unchanged',
+      'npm audit clean; CI and .nvmrc on Node 22 to match the calculator',
+    ],
+    highlightsZh: [
+      'Vite 8 + plugin-react 6、Vitest 5 + jsdom 29；24 项测试无需改动全部通过',
+      'npm audit 零漏洞；CI 与 .nvmrc 升到 Node 22，与计算器一致',
+    ],
+  },
+  {
     version: '2.7.6',
     date: '2026-10-01',
     product: 'calculator',

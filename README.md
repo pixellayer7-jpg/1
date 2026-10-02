@@ -1,7 +1,7 @@
 # PixelLayer L.L.C — React Landing Page
 
 > **Portfolio highlight** · [My GitHub](https://github.com/pixellayer7-jpg) · **Live demo:** [Marketing landing](https://pixellayer7-jpg.github.io/1/)  
-> React 18 · Vite 5 · Responsive · Bilingual (EN/中文) · Formspree · GitHub Actions CI  
+> React 18 · Vite 8 · Vitest 5 · Responsive · Bilingual (EN/中文) · Formspree · GitHub Actions CI  
 > _(Repo name on GitHub: [`1`](https://github.com/pixellayer7-jpg/1))_
 
 A simple, professional landing page for **PixelLayer L.L.C**, built with **React** and **Vite**. Frontend & web development for startups and small businesses.
@@ -27,7 +27,7 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
   先通过邮件简单确认需求，再给出报价与周期，中间会提供线上预览链接方便你随时反馈。
 
 ![Tech: React, Vite](https://img.shields.io/badge/React-18-61dafb?logo=react)
-![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite)
+![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite)
 [![CI](https://github.com/pixellayer7-jpg/1/actions/workflows/ci.yml/badge.svg)](https://github.com/pixellayer7-jpg/1/actions/workflows/ci.yml)
 
 ## Features
@@ -55,7 +55,8 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 ## Tech Stack
 
 - [React](https://react.dev/) 18
-- [Vite](https://vitejs.dev/) 5
+- [Vite](https://vitejs.dev/) 8 (Node 22.13+)
+- [Vitest](https://vitest.dev/) 5 + jsdom 29 + Testing Library
 - Plain CSS (no UI framework)
 
 ## Quick Start
