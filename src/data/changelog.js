@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '1.2.0',
+    date: '2026-10-05',
+    product: 'api',
+    titleEn: 'API on Fastify plugins 11 and Node 22',
+    titleZh: 'API 升级 Fastify 插件 11 与 Node 22',
+    highlightsEn: [
+      '@fastify/cors 11 + rate-limit 11; CORS methods pinned so CRM PATCH preflights still pass (new test)',
+      'Node 22 across engines, CI, and Docker — all five repos now on the same runtime',
+    ],
+    highlightsZh: [
+      '@fastify/cors 11 + rate-limit 11；显式声明 CORS 方法，CRM 的 PATCH 预检不受影响（新增测试）',
+      'engines、CI、Docker 统一 Node 22 — 五个仓库运行时一致',
+    ],
+  },
+  {
     version: '2.1.20',
     date: '2026-10-02',
     product: 'landing',
