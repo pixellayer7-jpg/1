@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.7.7',
+    date: '2026-10-05',
+    product: 'calculator',
+    titleEn: 'Calculator: zero lint warnings',
+    titleZh: '计算器：Lint 零警告',
+    highlightsEn: [
+      'Refactored setState-in-effect in calculator, contact form, and CRM; rule back to error',
+      'CRM live auto-load ignores stale responses; 122 tests',
+    ],
+    highlightsZh: [
+      '重构计算器、留言表单、CRM 的 effect 内 setState；规则恢复为 error',
+      'CRM 线上自动加载忽略过期响应；共 122 项测试',
+    ],
+  },
+  {
     version: '1.2.0',
     date: '2026-10-05',
     product: 'api',
