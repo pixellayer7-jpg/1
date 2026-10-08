@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.21',
+    date: '2026-10-08',
+    product: 'landing',
+    titleEn: 'Landing and calculator on React 19',
+    titleZh: '主站与计算器升级 React 19',
+    highlightsEn: [
+      'React 19.3 + Vite 8.3.3 on landing (v2.1.21) and calculator (v2.7.8)',
+      'All 146 tests pass unchanged; builds verified in a real browser; npm audit clean',
+    ],
+    highlightsZh: [
+      '主站（v2.1.21）与计算器（v2.7.8）升级 React 19.3 + Vite 8.3.3',
+      '146 项测试无需改动全部通过；构建经真实浏览器验证；npm audit 零漏洞',
+    ],
+  },
+  {
     version: '2.7.7',
     date: '2026-10-05',
     product: 'calculator',

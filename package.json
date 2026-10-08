@@ -1,7 +1,7 @@
 {
   "name": "client-landing",
   "private": true,
-  "version": "2.1.20",
+  "version": "2.1.21",
   "description": "PixelLayer L.L.C — React + Vite landing page for frontend & web development services.",
   "keywords": [
     "react",
@@ -30,8 +30,8 @@
     "check": "npm run format:check && npm test && npm run build"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",
@@ -40,7 +40,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "jsdom": "^29.1.1",
     "prettier": "^3.4.2",
-    "vite": "^8.3.2",
+    "vite": "^8.3.3",
     "vitest": "^5.0.3"
   }
 }
