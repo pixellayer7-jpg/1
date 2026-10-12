@@ -1,7 +1,7 @@
 # PixelLayer L.L.C — React Landing Page
 
 > **Portfolio highlight** · [My GitHub](https://github.com/pixellayer7-jpg) · **Live demo:** [Marketing landing](https://pixellayer7-jpg.github.io/1/)  
-> React 19 · Vite 8 · Vitest 5 · Responsive · Bilingual (EN/中文) · Formspree · GitHub Actions CI  
+> React 19 · Vite 8 · Vitest 5 · Playwright · Responsive · Bilingual (EN/中文) · Formspree · GitHub Actions CI  
 > _(Repo name on GitHub: [`1`](https://github.com/pixellayer7-jpg/1))_
 
 A simple, professional landing page for **PixelLayer L.L.C**, built with **React** and **Vite**. Frontend & web development for startups and small businesses.
@@ -54,9 +54,10 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 
 ## Tech Stack
 
-- [React](https://react.dev/) 18
+- [React](https://react.dev/) 19
 - [Vite](https://vitejs.dev/) 8 (Node 22.13+)
 - [Vitest](https://vitest.dev/) 5 + jsdom 29 + Testing Library
+- [Playwright](https://playwright.dev/) e2e on the production build (Chromium, in CI)
 - Plain CSS (no UI framework)
 
 ## Quick Start
@@ -77,6 +78,10 @@ npm run preview
 # Format (Prettier)
 npm run format
 npm run format:check
+
+# Unit tests (Vitest) and browser e2e (Playwright; first run: npx playwright install chromium)
+npm test
+npm run test:e2e
 ```
 
 ## Customize

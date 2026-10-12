@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.22',
+    date: '2026-10-12',
+    product: 'landing',
+    titleEn: 'Playwright e2e in CI for landing and calculator',
+    titleZh: '主站与计算器接入 Playwright 端到端测试',
+    highlightsEn: [
+      'Landing: ?section=walkthrough scroll, copy path, language persistence, pricing deep links',
+      'Calculator v2.7.9: full quote → proposal → acceptance → CRM path in a real browser; Rongen v1.2.5 moves to Node 22',
+    ],
+    highlightsZh: [
+      '主站：?section=walkthrough 定位、复制路径、语言记忆、定价深链',
+      '计算器 v2.7.9：真实浏览器跑通报价 → 提案 → 签署 → CRM；Rongen v1.2.5 升到 Node 22',
+    ],
+  },
+  {
     version: '2.1.21',
     date: '2026-10-08',
     product: 'landing',
