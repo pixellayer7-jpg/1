@@ -82,6 +82,7 @@ npm run format:check
 # Unit tests (Vitest) and browser e2e (Playwright; first run: npx playwright install chromium)
 npm test
 npm run test:e2e
+npm run test:coverage # v8 coverage with gates; CI posts the table to the job summary
 ```
 
 ## Customize

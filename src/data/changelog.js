@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.23',
+    date: '2026-10-13',
+    product: 'landing',
+    titleEn: 'Coverage gates across the stack',
+    titleZh: '全栈覆盖率门槛',
+    highlightsEn: [
+      'CI fails on a coverage drop: landing ~76% lines, calculator v2.7.10 ~80%, API v1.2.1 ~96%',
+      'API gains ESLint + Prettier, matching the frontends; coverage tables in each CI job summary',
+    ],
+    highlightsZh: [
+      '覆盖率下降即 CI 失败：主站行约 76%、计算器 v2.7.10 约 80%、API v1.2.1 约 96%',
+      'API 新增 ESLint + Prettier，与前端一致；各仓库 CI 摘要显示覆盖率表',
+    ],
+  },
+  {
     version: '2.1.22',
     date: '2026-10-12',
     product: 'landing',

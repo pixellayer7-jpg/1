@@ -18,7 +18,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run format:check
-      - run: npm test
+      - run: npm run test:coverage
+      - if: ${{ !cancelled() && hashFiles('coverage/coverage-summary.json') != '' }}
+        run: node scripts/coverage-summary.mjs
       - run: npm run build
 
   e2e:
