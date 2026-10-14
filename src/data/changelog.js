@@ -4,6 +4,21 @@
  */
 export const changelogEntries = [
   {
+    version: '2.1.24',
+    date: '2026-10-13',
+    product: 'landing',
+    titleEn: 'Automated accessibility checks',
+    titleZh: '自动化无障碍检查',
+    highlightsEn: [
+      'axe-core scans in Playwright (WCAG 2.1 AA) fail CI on serious issues; fixed button contrast (2.8:1 → 6.5:1) and underlined in-text links',
+      'New tests for lead API, clipboard fallback and contact hydration: ~87% lines; calculator v2.7.11 ~86%',
+    ],
+    highlightsZh: [
+      'Playwright 中加入 axe-core 扫描（WCAG 2.1 AA），出现严重问题即 CI 失败；修复按钮对比度（2.8:1 → 6.5:1），正文链接加下划线',
+      '新增询盘 API、剪贴板回退与联系表单回填测试：行覆盖约 87%；计算器 v2.7.11 约 86%',
+    ],
+  },
+  {
     version: '2.1.23',
     date: '2026-10-13',
     product: 'landing',

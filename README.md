@@ -57,7 +57,7 @@ A simple, professional landing page for **PixelLayer L.L.C**, built with **React
 - [React](https://react.dev/) 19
 - [Vite](https://vitejs.dev/) 8 (Node 22.13+)
 - [Vitest](https://vitest.dev/) 5 + jsdom 29 + Testing Library
-- [Playwright](https://playwright.dev/) e2e on the production build (Chromium, in CI)
+- [Playwright](https://playwright.dev/) e2e on the production build (Chromium, in CI), plus [axe-core](https://github.com/dequelabs/axe-core) WCAG 2.1 AA scans that fail on serious or critical issues
 - Plain CSS (no UI framework)
 
 ## Quick Start
